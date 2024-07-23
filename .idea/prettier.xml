@@ -4,5 +4,30 @@
     <option name="myConfigurationMode" value="MANUAL" />
     <option name="myRunOnSave" value="true" />
     <option name="myRunOnReformat" value="true" />
+    <option name="myFilesPattern" value="**/*.{js,ts,jsx,tsx,vue,astro}" />
+    <option name="myOptions">
+      <map>
+        <entry key="arrowParens" value="always" />
+        <entry key="bracketSpacing" value="true" />
+        <entry key="endOfLine" value="lf" />
+        <entry key="htmlWhitespaceSensitivity" value="css" />
+        <entry key="insertPragma" value="false" />
+        <entry key="singleAttributePerLine" value="false" />
+        <entry key="bracketSameLine" value="false" />
+        <entry key="jsxBracketSameLine" value="false" />
+        <entry key="jsxSingleQuote" value="false" />
+        <entry key="printWidth" value="80" />
+        <entry key="proseWrap" value="preserve" />
+        <entry key="quoteProps" value="as-needed" />
+        <entry key="requirePragma" value="false" />
+        <entry key="semi" value="true" />
+        <entry key="singleQuote" value="false" />
+        <entry key="tabWidth" value="2" />
+        <entry key="trailingComma" value="es5" />
+        <entry key="useTabs" value="false" />
+        <entry key="embeddedLanguageFormatting" value="auto" />
+        <entry key="vueIndentScriptAndStyle" value="false" />
+      </map>
+    </option>
   </component>
 </project>
