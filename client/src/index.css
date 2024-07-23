@@ -23,7 +23,7 @@ html {
     --primary-400: #38bec9;
     --primary-500: #59b379;
     --primary-600: #14919b;
-    --primary-700: #0e7c86;
+    --primary-700: #247905;
     --primary-800: #0a6c74;
     --primary-900: #044e54;
 
@@ -210,6 +210,13 @@ ul {
 
 .btn-block {
     width: 100%;
+    padding: 1rem;
+}
+
+.member-btn {
+    color: var(--primary-500);
+    letter-spacing: var(--letter-spacing);
+    margin-left: 0.5rem;
 }
 
 button:disabled {
