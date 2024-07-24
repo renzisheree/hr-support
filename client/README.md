@@ -32,7 +32,7 @@ npm run dev
 
 ```jsx
 const App = () => {
-  return <h1>Jobify App</h1>;
+	return <h1>Jobify App</h1>;
 };
 export default App;
 ```
@@ -42,10 +42,10 @@ export default App;
 - get assets folder from complete project
 - copy index.css
 - copy/move README.md (steps)
-  - work independently
-  - reference
-  - troubleshoot
-  - copy
+    - work independently
+    - reference
+    - troubleshoot
+    - copy
 
 #### Global Styles
 
@@ -105,22 +105,22 @@ App.jsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <h1>home</h1>,
-  },
-  {
-    path: '/about',
-    element: (
-      <div>
-        <h2>about page</h2>
-      </div>
-    ),
-  },
+	{
+		path: '/',
+		element: <h1>home</h1>,
+	},
+	{
+		path: '/about',
+		element: (
+			<div>
+				<h2>about page</h2>
+			</div>
+		),
+	},
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router}/>;
 };
 export default App;
 ```
@@ -180,31 +180,31 @@ App.jsx
 
 ```jsx
 import {
-  HomeLayout,
-  Landing,
-  Register,
-  Login,
-  DashboardLayout,
-  Error,
+	HomeLayout,
+	Landing,
+	Register,
+	Login,
+	DashboardLayout,
+	Error,
 } from './pages';
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomeLayout />,
-  },
-  {
-    path: '/register',
-    element: <Register />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/dashboard',
-    element: <DashboardLayout />,
-  },
+	{
+		path: '/',
+		element: <HomeLayout/>,
+	},
+	{
+		path: '/register',
+		element: <Register/>,
+	},
+	{
+		path: '/login',
+		element: <Login/>,
+	},
+	{
+		path: '/dashboard',
+		element: <DashboardLayout/>,
+	},
 ]);
 ```
 
@@ -256,24 +256,24 @@ App.jsx
 
 ```jsx
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomeLayout />,
-    children: [
-      {
-        path: 'register',
-        element: <Register />,
-      },
-      {
-        path: 'login',
-        element: <Login />,
-      },
-      {
-        path: 'dashboard',
-        element: <DashboardLayout />,
-      },
-    ],
-  },
+	{
+		path: '/',
+		element: <HomeLayout/>,
+		children: [
+			{
+				path: 'register',
+				element: <Register/>,
+			},
+			{
+				path: 'login',
+				element: <Login/>,
+			},
+			{
+				path: 'dashboard',
+				element: <DashboardLayout/>,
+			},
+		],
+	},
 ]);
 ```
 
@@ -283,13 +283,13 @@ HomeLayout.jsx
 import { Outlet } from 'react-router-dom';
 
 const HomeLayout = () => {
-  return (
-    <>
-      {/* add things like Navbar */}
-      {/* <h1>home layout</h1> */}
-      <Outlet />
-    </>
-  );
+	return (
+		<>
+			{/* add things like Navbar.jsx */}
+			{/* <h1>home layout</h1> */}
+			<Outlet/>
+		</>
+	);
 };
 export default HomeLayout;
 ```
@@ -440,39 +440,39 @@ export default Landing;
 
 ```jsx
 import main from './main.svg';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import styled from 'styled-components';
 
 const Landing = () => {
-    return (
-        <StyledWrapper>
-            <nav>
-                <img src={logo} alt='jobify' className='logo'/>
-            </nav>
-            <div className='container page'>
-                {/* info */}
-                <div className='info'>
-                    <h1>
-                        job <span>tracking</span> app
-                    </h1>
-                    <p>
-                        I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
-                        bottle single-origin coffee chia. Aesthetic post-ironic venmo,
-                        quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
-                        narwhal.
-                    </p>
-                    <Link to='/register' className='btn register-link'>
-                        Register
-                    </Link>
-                    <Link to='/login' className='btn'>
-                        Login / Demo User
-                    </Link>
-                </div>
-                <img src={main} alt='job hunt' className='img main-img'/>
-            </div>
-        </StyledWrapper>
-    );
+	return (
+		<StyledWrapper>
+			<nav>
+				<img src={logo} alt='jobify' className='logo'/>
+			</nav>
+			<div className='container page'>
+				{/* info */}
+				<div className='info'>
+					<h1>
+						job <span>tracking</span> app
+					</h1>
+					<p>
+						I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
+						bottle single-origin coffee chia. Aesthetic post-ironic venmo,
+						quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
+						narwhal.
+					</p>
+					<Link to='/register' className='btn register-link'>
+						Register
+					</Link>
+					<Link to='/login' className='btn'>
+						Login / Demo User
+					</Link>
+				</div>
+				<img src={main} alt='job hunt' className='img main-img'/>
+			</div>
+		</StyledWrapper>
+	);
 };
 
 const StyledWrapper = styled.section`
@@ -681,11 +681,15 @@ export default Register;
 
 - required attribute
 
-  In HTML, the "required" attribute is used to indicate that a form input field must be filled out before the form can be submitted. It is typically applied to input elements such as text fields, checkboxes, and radio buttons. When the "required" attribute is added to an input element, the browser will prevent form submission if the field is left empty, providing a validation message to prompt the user to enter the required information.
+  In HTML, the "required" attribute is used to indicate that a form input field must be filled out before the form can
+  be submitted. It is typically applied to input elements such as text fields, checkboxes, and radio buttons. When the "
+  required" attribute is added to an input element, the browser will prevent form submission if the field is left empty,
+  providing a validation message to prompt the user to enter the required information.
 
 - default value
 
-In React, the defaultValue prop is used to set the initial or default value of an input component. It is similar to the value attribute in HTML, but with a slightly different behavior.
+In React, the defaultValue prop is used to set the initial or default value of an input component. It is similar to the
+value attribute in HTML, but with a slightly different behavior.
 
 #### FormRow Component
 
@@ -762,28 +766,28 @@ import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-  return (
-    <Wrapper>
-      <form className='form'>
-        <Logo />
-        <h4>Login</h4>
-        <FormRow type='email' name='email' defaultValue='john@gmail.com' />
-        <FormRow type='password' name='password' defaultValue='secret123' />
-        <button type='submit' className='btn btn-block'>
-          submit
-        </button>
-        <button type='button' className='btn btn-block'>
-          explore the app
-        </button>
-        <p>
-          Not a member yet?
-          <Link to='/register' className='member-btn'>
-            Register
-          </Link>
-        </p>
-      </form>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<form className='form'>
+				<Logo/>
+				<h4>Login</h4>
+				<FormRow type='email' name='email' defaultValue='john@gmail.com'/>
+				<FormRow type='password' name='password' defaultValue='secret123'/>
+				<button type='submit' className='btn btn-block'>
+					submit
+				</button>
+				<button type='button' className='btn btn-block'>
+					explore the app
+				</button>
+				<p>
+					Not a member yet?
+					<Link to='/register' className='member-btn'>
+						Register
+					</Link>
+				</p>
+			</form>
+		</Wrapper>
+	);
 };
 export default Login;
 ```
@@ -836,29 +840,37 @@ App.jsx
 
 ```jsx
  {
-        path: 'dashboard',
-        element: <DashboardLayout />,
-        children: [
-          {
-            index: true,
-            element: <AddJob />,
-          },
-          { path: 'stats', element: <Stats /> },
-          {
-            path: 'all-jobs',
-            element: <AllJobs />,
-          },
-
-          {
-            path: 'profile',
-            element: <Profile />,
-          },
-          {
-            path: 'admin',
-            element: <Admin />,
-          },
-        ],
-      },
+	path: 'dashboard',
+		element
+:
+	<DashboardLayout/>,
+		children
+:
+	[
+		{
+			index: true,
+			element: <AddJob/>,
+		},
+		{
+			path: 'stats',
+			element: <Stats/>
+		},
+		{
+			path: 'all-jobs',
+			element: <AllJobs/>,
+		},
+		
+		{
+			path: 'profile',
+			element: <Profile/>,
+		},
+		{
+			path: 'admin',
+			element: <Admin/>,
+		},
+	],
+}
+,
 ```
 
 Dashboard.jsx
@@ -867,11 +879,11 @@ Dashboard.jsx
 import { Outlet } from 'react-router-dom';
 
 const DashboardLayout = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+	return (
+		<div>
+			<Outlet/>
+		</div>
+	);
 };
 export default DashboardLayout;
 ```
@@ -892,20 +904,20 @@ import Wrapper from '../assets/wrappers/Dashboard';
 import { Navbar, BigSidebar, SmallSidebar } from '../components';
 
 const Dashboard = () => {
-  return (
-    <Wrapper>
-      <main className='dashboard'>
-        <SmallSidebar />
-        <BigSidebar />
-        <div>
-          <Navbar />
-          <div className='dashboard-page'>
-            <Outlet />
-          </div>
-        </div>
-      </main>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<main className='dashboard'>
+				<SmallSidebar/>
+				<BigSidebar/>
+				<div>
+					<Navbar/>
+					<div className='dashboard-page'>
+						<Outlet/>
+					</div>
+				</div>
+			</main>
+		</Wrapper>
+	);
 };
 
 export default Dashboard;
@@ -949,50 +961,51 @@ import Wrapper from '../assets/wrappers/Dashboard';
 import { Navbar, BigSidebar, SmallSidebar } from '../components';
 
 import { useState, createContext, useContext } from 'react';
+
 const DashboardContext = createContext();
 const Dashboard = () => {
-  // temp
-  const user = { name: 'john' };
-
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  const toggleDarkTheme = () => {
-    console.log('toggle dark theme');
-  };
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
-
-  const logoutUser = async () => {
-    console.log('logout user');
-  };
-  return (
-    <DashboardContext.Provider
-      value={{
-        user,
-        showSidebar,
-        isDarkTheme,
-        toggleDarkTheme,
-        toggleSidebar,
-        logoutUser,
-      }}
-    >
-      <Wrapper>
-        <main className='dashboard'>
-          <SmallSidebar />
-          <BigSidebar />
-          <div>
-            <Navbar />
-            <div className='dashboard-page'>
-              <Outlet />
-            </div>
-          </div>
-        </main>
-      </Wrapper>
-    </DashboardContext.Provider>
-  );
+	// temp
+	const user = { name: 'john' };
+	
+	const [showSidebar, setShowSidebar] = useState(false);
+	const [isDarkTheme, setIsDarkTheme] = useState(false);
+	
+	const toggleDarkTheme = () => {
+		console.log('toggle dark theme');
+	};
+	
+	const toggleSidebar = () => {
+		setShowSidebar(!showSidebar);
+	};
+	
+	const logoutUser = async () => {
+		console.log('logout user');
+	};
+	return (
+		<DashboardContext.Provider
+			value={{
+				user,
+				showSidebar,
+				isDarkTheme,
+				toggleDarkTheme,
+				toggleSidebar,
+				logoutUser,
+			}}
+		>
+			<Wrapper>
+				<main className='dashboard'>
+					<SmallSidebar/>
+					<BigSidebar/>
+					<div>
+						<Navbar/>
+						<div className='dashboard-page'>
+							<Outlet/>
+						</div>
+					</div>
+				</main>
+			</Wrapper>
+		</DashboardContext.Provider>
+	);
 };
 
 export const useDashboardContext = () => useContext(DashboardContext);
@@ -1012,14 +1025,15 @@ Navbar.jsx
 
 ```jsx
 
-import {FaHome} from 'react-icons/fa'
+import { FaHome } from 'react-icons/fa'
+
 const Navbar = () => {
-  return (
-    <div>
-      <h2>navbar</h2>
-      <FaHome>
-    </div>
-  )
+	return (
+		<div>
+			<h2>navbar</h2>
+			<FaHome>
+		</div>
+)
 }
 
 ```
@@ -1027,27 +1041,28 @@ const Navbar = () => {
 #### Navbar - Initial Setup
 
 ```jsx
-import Wrapper from '../assets/wrappers/Navbar';
+import Wrapper from '../assets/wrappers/Navbar.jsx';
 import { FaAlignLeft } from 'react-icons/fa';
 import Logo from './Logo';
 
 import { useDashboardContext } from '../pages/DashboardLayout';
+
 const Navbar = () => {
-  const { toggleSidebar } = useDashboardContext();
-  return (
-    <Wrapper>
-      <div className='nav-center'>
-        <button type='button' className='toggle-btn' onClick={toggleSidebar}>
-          <FaAlignLeft />
-        </button>
-        <div>
-          <Logo />
-          <h4 className='logo-text'>dashboard</h4>
-        </div>
-        <div className='btn-container'>toggle/logout</div>
-      </div>
-    </Wrapper>
-  );
+	const { toggleSidebar } = useDashboardContext();
+	return (
+		<Wrapper>
+			<div className='nav-center'>
+				<button type='button' className='toggle-btn' onClick={toggleSidebar}>
+					<FaAlignLeft/>
+				</button>
+				<div>
+					<Logo/>
+					<h4 className='logo-text'>dashboard</h4>
+				</div>
+				<div className='btn-container'>toggle/logout</div>
+			</div>
+		</Wrapper>
+	);
 };
 
 export default Navbar;
@@ -1153,44 +1168,51 @@ import links from '../utils/links';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const SmallSidebar = () => {
-  const { showSidebar, toggleSidebar } = useDashboardContext();
-  return (
-    <Wrapper>
-      <div
-        className={
-          showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'
-        }
-      >
-        <div className='content'>
-          <button type='button' className='close-btn' onClick={toggleSidebar}>
-            <FaTimes />
-          </button>
-          <header>
-            <Logo />
-          </header>
-          <div className='nav-links'>
-            {links.map((link) => {
-              const { text, path, icon } = link;
-
-              return (
-                <NavLink
-                  to={path}
-                  key={text}
-                  className='nav-link'
-                  onClick={toggleSidebar}
-                  // will discuss in a second
-                  end
-                >
-                  <span className='icon'>{icon}</span>
-                  {text}
-                </NavLink>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </Wrapper>
-  );
+	const {
+		showSidebar,
+		toggleSidebar
+	} = useDashboardContext();
+	return (
+		<Wrapper>
+			<div
+				className={
+					showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'
+				}
+			>
+				<div className='content'>
+					<button type='button' className='close-btn' onClick={toggleSidebar}>
+						<FaTimes/>
+					</button>
+					<header>
+						<Logo/>
+					</header>
+					<div className='nav-links'>
+						{links.map((link) => {
+							const {
+								text,
+								path,
+								icon
+							} = link;
+							
+							return (
+								<NavLink
+									to={path}
+									key={text}
+									className='nav-link'
+									onClick={toggleSidebar}
+									// will discuss in a second
+									end
+								>
+									<span className='icon'>{icon}</span>
+									{text}
+								</NavLink>
+							);
+						})}
+					</div>
+				</div>
+			</div>
+		</Wrapper>
+	);
 };
 
 export default SmallSidebar;
@@ -1287,28 +1309,35 @@ import links from '../utils/links';
 import { NavLink } from 'react-router-dom';
 
 const NavLinks = () => {
-  const { user, toggleSidebar } = useDashboardContext();
-
-  return (
-    <div className='nav-links'>
-      {links.map((link) => {
-        const { text, path, icon } = link;
-        // admin user
-        return (
-          <NavLink
-            to={path}
-            key={text}
-            onClick={toggleSidebar}
-            className='nav-link'
-            end
-          >
-            <span className='icon'>{icon}</span>
-            {text}
-          </NavLink>
-        );
-      })}
-    </div>
-  );
+	const {
+		user,
+		toggleSidebar
+	} = useDashboardContext();
+	
+	return (
+		<div className='nav-links'>
+			{links.map((link) => {
+				const {
+					text,
+					path,
+					icon
+				} = link;
+				// admin user
+				return (
+					<NavLink
+						to={path}
+						key={text}
+						onClick={toggleSidebar}
+						className='nav-link'
+						end
+					>
+						<span className='icon'>{icon}</span>
+						{text}
+					</NavLink>
+				);
+			})}
+		</div>
+	);
 };
 
 export default NavLinks;
@@ -1323,23 +1352,23 @@ import Wrapper from '../assets/wrappers/BigSidebar';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const BigSidebar = () => {
-  const { showSidebar } = useDashboardContext();
-  return (
-    <Wrapper>
-      <div
-        className={
-          showSidebar ? 'sidebar-container ' : 'sidebar-container show-sidebar'
-        }
-      >
-        <div className='content'>
-          <header>
-            <Logo />
-          </header>
-          <NavLinks isBigSidebar />
-        </div>
-      </div>
-    </Wrapper>
-  );
+	const { showSidebar } = useDashboardContext();
+	return (
+		<Wrapper>
+			<div
+				className={
+					showSidebar ? 'sidebar-container ' : 'sidebar-container show-sidebar'
+				}
+			>
+				<div className='content'>
+					<header>
+						<Logo/>
+					</header>
+					<NavLinks isBigSidebar/>
+				</div>
+			</div>
+		</Wrapper>
+	);
 };
 
 export default BigSidebar;
@@ -1452,32 +1481,35 @@ import { useState } from 'react';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const LogoutContainer = () => {
-  const [showLogout, setShowLogout] = useState(false);
-  const { user, logoutUser } = useDashboardContext();
-
-  return (
-    <Wrapper>
-      <button
-        type='button'
-        className='btn logout-btn'
-        onClick={() => setShowLogout(!showLogout)}
-      >
-        {user.avatar ? (
-          <img src={user.avatar} alt='avatar' className='img' />
-        ) : (
-          <FaUserCircle />
-        )}
-
-        {user?.name}
-        <FaCaretDown />
-      </button>
-      <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
-        <button type='button' className='dropdown-btn' onClick={logoutUser}>
-          logout
-        </button>
-      </div>
-    </Wrapper>
-  );
+	const [showLogout, setShowLogout] = useState(false);
+	const {
+		user,
+		logoutUser
+	} = useDashboardContext();
+	
+	return (
+		<Wrapper>
+			<button
+				type='button'
+				className='btn logout-btn'
+				onClick={() => setShowLogout(!showLogout)}
+			>
+				{user.avatar ? (
+					<img src={user.avatar} alt='avatar' className='img'/>
+				) : (
+					<FaUserCircle/>
+				)}
+				
+				{user?.name}
+				<FaCaretDown/>
+			</button>
+			<div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
+				<button type='button' className='dropdown-btn' onClick={logoutUser}>
+					logout
+				</button>
+			</div>
+		</Wrapper>
+	);
 };
 export default LogoutContainer;
 ```
@@ -1544,16 +1576,19 @@ import Wrapper from '../assets/wrappers/ThemeToggle';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const ThemeToggle = () => {
-  const { isDarkTheme, toggleDarkTheme } = useDashboardContext();
-  return (
-    <Wrapper onClick={toggleDarkTheme}>
-      {isDarkTheme ? (
-        <BsFillSunFill className='toggle-icon' />
-      ) : (
-        <BsFillMoonFill className='toggle-icon' />
-      )}
-    </Wrapper>
-  );
+	const {
+		isDarkTheme,
+		toggleDarkTheme
+	} = useDashboardContext();
+	return (
+		<Wrapper onClick={toggleDarkTheme}>
+			{isDarkTheme ? (
+				<BsFillSunFill className='toggle-icon'/>
+			) : (
+				<BsFillMoonFill className='toggle-icon'/>
+			)}
+		</Wrapper>
+	);
 };
 
 export default ThemeToggle;
@@ -1610,17 +1645,19 @@ App.jsx
 
 ```jsx
 const checkDefaultTheme = () => {
-  const isDarkTheme =
-    localStorage.getItem('darkTheme') === 'true'
-  document.body.classList.toggle('dark-theme', isDarkTheme);
-  return isDarkTheme;
+	const isDarkTheme =
+		localStorage.getItem('darkTheme') === 'true'
+	document.body.classList.toggle('dark-theme', isDarkTheme);
+	return isDarkTheme;
 };
 
 const isDarkThemeEnabled = checkDefaultTheme();
 
 {
-path: 'dashboard',
-element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled} />,
+	path: 'dashboard',
+		element
+:
+	<DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled}/>,
 }
 ```
 
@@ -1768,11 +1805,16 @@ npm run setup-project
 
 [Express Docs](https://expressjs.com/)
 
-Express is a fast and minimalist web application framework for Node.js. It simplifies the process of building web applications by providing a robust set of features for handling HTTP requests, routing, middleware, and more. Express allows you to create server-side applications and APIs easily, with a focus on simplicity and flexibility.
+Express is a fast and minimalist web application framework for Node.js. It simplifies the process of building web
+applications by providing a robust set of features for handling HTTP requests, routing, middleware, and more. Express
+allows you to create server-side applications and APIs easily, with a focus on simplicity and flexibility.
 
 [Nodemon Docs](https://nodemon.io/)
 
-Nodemon is a development tool that improves the developer experience. It monitors your Node.js application for any changes in the code and automatically restarts the server whenever a change is detected. This eliminates the need to manually restart the server after every code modification, making the development process more efficient and productive. Nodemon is commonly used during development to save time and avoid the hassle of manual server restarts.
+Nodemon is a development tool that improves the developer experience. It monitors your Node.js application for any
+changes in the code and automatically restarts the server whenever a change is detected. This eliminates the need to
+manually restart the server after every code modification, making the development process more efficient and productive.
+Nodemon is commonly used during development to save time and avoid the hassle of manual server restarts.
 
 ```sh
 npm i express@4.18.2 nodemon@2.0.22
@@ -1782,14 +1824,15 @@ server.js
 
 ```js
 import express from 'express';
+
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+	res.send('Hello World');
 });
 
 app.listen(5100, () => {
-  console.log('server running....');
+	console.log('server running....');
 });
 ```
 
@@ -1803,7 +1846,10 @@ package.json
 
 #### Thunder Client
 
-Thunder Client is a popular Visual Studio Code extension that facilitates API testing and debugging. It provides a user-friendly interface for making HTTP requests and viewing the responses, allowing developers to easily test APIs, examine headers, and inspect JSON/XML payloads. Thunder Client offers features such as environment variables, request history, and the ability to save and organize requests for efficient development workflows.
+Thunder Client is a popular Visual Studio Code extension that facilitates API testing and debugging. It provides a
+user-friendly interface for making HTTP requests and viewing the responses, allowing developers to easily test APIs,
+examine headers, and inspect JSON/XML payloads. Thunder Client offers features such as environment variables, request
+history, and the ability to save and organize requests for efficient development workflows.
 
 [Thunder Client](https://www.thunderclient.com/)
 
@@ -1819,9 +1865,12 @@ server
 app.use(express.json());
 
 app.post('/', (req, res) => {
-  console.log(req);
-
-  res.json({ message: 'Data received', data: req.body });
+	console.log(req);
+	
+	res.json({
+		message: 'Data received',
+		data: req.body
+	});
 });
 ```
 
@@ -1853,15 +1902,16 @@ server.js
 
 ```js
 import * as dotenv from 'dotenv';
+
 dotenv.config();
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+	app.use(morgan('dev'));
 }
 
 const port = process.env.PORT || 5100;
 app.listen(port, () => {
-  console.log(`server running on PORT ${port}....`);
+	console.log(`server running on PORT ${port}....`);
 });
 ```
 
@@ -1901,7 +1951,9 @@ package.json
 
 [Nanoid](https://www.npmjs.com/package/nanoid)
 
-The nanoid package is a software library used for generating unique and compact identifiers in web applications or databases. It creates short and URL-safe IDs by combining random characters from a set of 64 characters. Nanoid is a popular choice due to its simplicity, efficiency, and collision-resistant nature.
+The nanoid package is a software library used for generating unique and compact identifiers in web applications or
+databases. It creates short and URL-safe IDs by combining random characters from a set of 64 characters. Nanoid is a
+popular choice due to its simplicity, efficiency, and collision-resistant nature.
 
 ```sh
 npm i nanoid@4.0.2
@@ -1913,12 +1965,21 @@ server.js
 import { nanoid } from 'nanoid';
 
 let jobs = [
-  { id: nanoid(), company: 'apple', position: 'front-end' },
-  { id: nanoid(), company: 'google', position: 'back-end' },
+	{
+		id: nanoid(),
+		company: 'apple',
+		position: 'front-end'
+	},
+	{
+		id: nanoid(),
+		company: 'google',
+		position: 'back-end'
+	},
 ];
 
 app.get('/api/v1/jobs', (req, res) => {
-  res.status(200).json({ jobs });
+	res.status(200)
+	.json({ jobs });
 });
 ```
 
@@ -1928,58 +1989,80 @@ app.get('/api/v1/jobs', (req, res) => {
 // CREATE JOB
 
 app.post('/api/v1/jobs', (req, res) => {
-  const { company, position } = req.body;
-  if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
-  }
-  const id = nanoid(10);
-  // console.log(id);
-  const job = { id, company, position };
-  jobs.push(job);
-  res.status(200).json({ job });
+	const {
+		company,
+		position
+	} = req.body;
+	if (!company || !position) {
+		return res.status(400)
+		.json({ msg: 'please provide company and position' });
+	}
+	const id = nanoid(10);
+	// console.log(id);
+	const job = {
+		id,
+		company,
+		position
+	};
+	jobs.push(job);
+	res.status(200)
+	.json({ job });
 });
 
 // GET SINGLE JOB
 
 app.get('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
-  if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
-  }
-  res.status(200).json({ job });
+	const { id } = req.params;
+	const job = jobs.find((job) => job.id === id);
+	if (!job) {
+		return res.status(404)
+		.json({ msg: `no job with id ${id}` });
+	}
+	res.status(200)
+	.json({ job });
 });
 
 // EDIT JOB
 
 app.patch('/api/v1/jobs/:id', (req, res) => {
-  const { company, position } = req.body;
-  if (!company || !position) {
-    return res.status(400).json({ msg: 'please provide company and position' });
-  }
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
-  if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
-  }
-
-  job.company = company;
-  job.position = position;
-  res.status(200).json({ msg: 'job modified', job });
+	const {
+		company,
+		position
+	} = req.body;
+	if (!company || !position) {
+		return res.status(400)
+		.json({ msg: 'please provide company and position' });
+	}
+	const { id } = req.params;
+	const job = jobs.find((job) => job.id === id);
+	if (!job) {
+		return res.status(404)
+		.json({ msg: `no job with id ${id}` });
+	}
+	
+	job.company = company;
+	job.position = position;
+	res.status(200)
+	.json({
+		msg: 'job modified',
+		job
+	});
 });
 
 // DELETE JOB
 
 app.delete('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
-  if (!job) {
-    return res.status(404).json({ msg: `no job with id ${id}` });
-  }
-  const newJobs = jobs.filter((job) => job.id !== id);
-  jobs = newJobs;
-
-  res.status(200).json({ msg: 'job deleted' });
+	const { id } = req.params;
+	const job = jobs.find((job) => job.id === id);
+	if (!job) {
+		return res.status(404)
+		.json({ msg: `no job with id ${id}` });
+	}
+	const newJobs = jobs.filter((job) => job.id !== id);
+	jobs = newJobs;
+	
+	res.status(200)
+	.json({ msg: 'job deleted' });
 });
 ```
 
@@ -1987,7 +2070,8 @@ app.delete('/api/v1/jobs/:id', (req, res) => {
 
 ```js
 app.use('*', (req, res) => {
-  res.status(404).json({ msg: 'not found' });
+	res.status(404)
+	.json({ msg: 'not found' });
 });
 ```
 
@@ -1995,37 +2079,45 @@ app.use('*', (req, res) => {
 
 ```js
 app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: 'something went wrong' });
+	console.log(err);
+	res.status(500)
+	.json({ msg: 'something went wrong' });
 });
 ```
 
 #### Not Found and Error Middleware
 
-The "not found" middleware in Express.js is used when a request is made to a route that does not exist. It catches these requests and responds with a 404 status code, indicating that the requested resource was not found.
+The "not found" middleware in Express.js is used when a request is made to a route that does not exist. It catches these
+requests and responds with a 404 status code, indicating that the requested resource was not found.
 
-On the other hand, the "error" middleware in Express.js is used to handle any errors that occur during the processing of a request. It is typically used to catch unexpected errors or exceptions that are not explicitly handled in the application code. It logs the error and sends a 500 status code, indicating an internal server error.
+On the other hand, the "error" middleware in Express.js is used to handle any errors that occur during the processing of
+a request. It is typically used to catch unexpected errors or exceptions that are not explicitly handled in the
+application code. It logs the error and sends a 500 status code, indicating an internal server error.
 
-In summary, the "not found" middleware is specifically designed to handle requests for non-existent routes, while the "error" middleware is a catch-all for handling unexpected errors that occur during request processing.
+In summary, the "not found" middleware is specifically designed to handle requests for non-existent routes, while the "
+error" middleware is a catch-all for handling unexpected errors that occur during request processing.
 
 - make a request to "/jobss"
 
 ```js
 // GET ALL JOBS
 app.get('/api/v1/jobs', (req, res) => {
-  // console.log(jobss);
-  res.status(200).json({ jobs });
+	// console.log(jobss);
+	res.status(200)
+	.json({ jobs });
 });
 
 // GET SINGLE JOB
 app.get('/api/v1/jobs/:id', (req, res) => {
-  const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
-  if (!job) {
-    throw new Error('no job with that id');
-    return res.status(404).json({ msg: `no job with id ${id}` });
-  }
-  res.status(200).json({ job });
+	const { id } = req.params;
+	const job = jobs.find((job) => job.id === id);
+	if (!job) {
+		throw new Error('no job with that id');
+		return res.status(404)
+		.json({ msg: `no job with id ${id}` });
+	}
+	res.status(200)
+	.json({ job });
 });
 ```
 
@@ -2125,6 +2217,7 @@ server.js
 
 ```js
 import jobRouter from './routers/jobRouter.js';
+
 app.use('/api/v1/jobs', jobRouter);
 ```
 
@@ -2132,15 +2225,23 @@ app.use('/api/v1/jobs', jobRouter);
 
 [MongoDb](https://www.mongodb.com/)
 
-MongoDB is a popular NoSQL database that provides a flexible and scalable approach to storing and retrieving data. It uses a document-oriented model, where data is organized into collections of JSON-like documents. MongoDB offers high performance, horizontal scalability, and easy integration with modern development frameworks, making it suitable for handling diverse data types and handling large-scale applications.
+MongoDB is a popular NoSQL database that provides a flexible and scalable approach to storing and retrieving data. It
+uses a document-oriented model, where data is organized into collections of JSON-like documents. MongoDB offers high
+performance, horizontal scalability, and easy integration with modern development frameworks, making it suitable for
+handling diverse data types and handling large-scale applications.
 
-MongoDB Atlas is a fully managed cloud database service provided by MongoDB, offering automated deployment, scaling, and monitoring of MongoDB clusters, allowing developers to focus on building their applications without worrying about infrastructure management.
+MongoDB Atlas is a fully managed cloud database service provided by MongoDB, offering automated deployment, scaling, and
+monitoring of MongoDB clusters, allowing developers to focus on building their applications without worrying about
+infrastructure management.
 
 #### Mongoosejs
 
 [Mongoose](https://mongoosejs.com/)
 
-Mongoose is an Object Data Modeling (ODM) library for Node.js that provides a straightforward and elegant way to interact with MongoDB. It allows developers to define schemas and models for their data, providing structure and validation. Mongoose also offers features like data querying, middleware, and support for data relationships, making it a powerful tool for building MongoDB-based applications.
+Mongoose is an Object Data Modeling (ODM) library for Node.js that provides a straightforward and elegant way to
+interact with MongoDB. It allows developers to define schemas and models for their data, providing structure and
+validation. Mongoose also offers features like data querying, middleware, and support for data relationships, making it
+a powerful tool for building MongoDB-based applications.
 
 ```sh
 npm i mongoose@7.0.5
@@ -2152,13 +2253,13 @@ server.js
 import mongoose from 'mongoose';
 
 try {
-  await mongoose.connect(process.env.MONGO_URL);
-  app.listen(port, () => {
-    console.log(`server running on PORT ${port}....`);
-  });
+	await mongoose.connect(process.env.MONGO_URL);
+	app.listen(port, () => {
+		console.log(`server running on PORT ${port}....`);
+	});
 } catch (error) {
-  console.log(error);
-  process.exit(1);
+	console.log(error);
+	process.exit(1);
 }
 ```
 
@@ -2228,7 +2329,10 @@ export const createJob = async (req, res) => {
 
 #### express-async-errors
 
-The "express-async-errors" package is an Express.js middleware that helps handle errors that occur within asynchronous functions. It catches unhandled errors inside async/await functions and forwards them to Express.js's error handling middleware, preventing the Node.js process from crashing. It simplifies error handling in Express.js applications by allowing you to write asynchronous code without worrying about manually catching and forwarding errors.
+The "express-async-errors" package is an Express.js middleware that helps handle errors that occur within asynchronous
+functions. It catches unhandled errors inside async/await functions and forwards them to Express.js's error handling
+middleware, preventing the Node.js process from crashing. It simplifies error handling in Express.js applications by
+allowing you to write asynchronous code without worrying about manually catching and forwarding errors.
 
 [Express Async Errors](https://www.npmjs.com/package/express-async-errors)
 
@@ -2315,7 +2419,11 @@ export const updateJob = async (req, res) => {
 
 #### Status Codes
 
-A library for HTTP status codes is useful because it provides a comprehensive and standardized set of codes that represent the outcome of HTTP requests. It allows developers to easily understand and handle different scenarios during web development, such as successful responses, client or server errors, redirects, and more. By using a status code library, developers can ensure consistent and reliable communication between servers and clients, leading to better error handling and improved user experience.
+A library for HTTP status codes is useful because it provides a comprehensive and standardized set of codes that
+represent the outcome of HTTP requests. It allows developers to easily understand and handle different scenarios during
+web development, such as successful responses, client or server errors, redirects, and more. By using a status code
+library, developers can ensure consistent and reliable communication between servers and clients, leading to better
+error handling and improved user experience.
 
 [Http Status Codes](https://www.npmjs.com/package/http-status-codes)
 
@@ -2378,21 +2486,31 @@ export class NotFoundError extends Error {
 }
 ```
 
-This code defines a custom error class NotFoundError that extends the built-in Error class in JavaScript. The NotFoundError class is designed to be used when a requested resource is not found, and it includes a status code of 404 to indicate this.
+This code defines a custom error class NotFoundError that extends the built-in Error class in JavaScript. The
+NotFoundError class is designed to be used when a requested resource is not found, and it includes a status code of 404
+to indicate this.
 
 Here's a breakdown of the code:
 
-class NotFoundError extends Error: This line defines a new class NotFoundError that extends the built-in Error class. This means that NotFoundError inherits all of the properties and methods of the Error class, and can also define its own properties and methods.
+class NotFoundError extends Error: This line defines a new class NotFoundError that extends the built-in Error class.
+This means that NotFoundError inherits all of the properties and methods of the Error class, and can also define its own
+properties and methods.
 
-constructor(message): This is the constructor method for the NotFoundError class, which is called when a new instance of the class is created. The message parameter is the error message that will be displayed when the error is thrown.
+constructor(message): This is the constructor method for the NotFoundError class, which is called when a new instance of
+the class is created. The message parameter is the error message that will be displayed when the error is thrown.
 
-super(message): This line calls the constructor of the Error class and passes the message parameter to it. This sets the error message for the NotFoundError instance.
+super(message): This line calls the constructor of the Error class and passes the message parameter to it. This sets the
+error message for the NotFoundError instance.
 
-this.name = "NotFoundError": This line sets the name property of the NotFoundError instance to "NotFoundError". This is a built-in property of the Error class that specifies the name of the error.
+this.name = "NotFoundError": This line sets the name property of the NotFoundError instance to "NotFoundError". This is
+a built-in property of the Error class that specifies the name of the error.
 
-this.statusCode = 404: This line sets the statusCode property of the NotFoundError instance to 404. This is a custom property that is specific to the NotFoundError class and indicates the HTTP status code that should be returned when this error occurs.
+this.statusCode = 404: This line sets the statusCode property of the NotFoundError instance to 404. This is a custom
+property that is specific to the NotFoundError class and indicates the HTTP status code that should be returned when
+this error occurs.
 
-By creating a custom error class like NotFoundError, you can provide more specific error messages and properties to help with debugging and error handling in your application.
+By creating a custom error class like NotFoundError, you can provide more specific error messages and properties to help
+with debugging and error handling in your application.
 
 #### Custom Error
 
@@ -2474,8 +2592,8 @@ server.js
 
 ```js
 app.post('/api/v1/test', (req, res) => {
-  const { name } = req.body;
-  res.json({ msg: `hello ${name}` });
+	const { name } = req.body;
+	res.json({ msg: `hello ${name}` });
 });
 ```
 
@@ -2485,20 +2603,26 @@ app.post('/api/v1/test', (req, res) => {
 import { body, validationResult } from 'express-validator';
 
 app.post(
-  '/api/v1/test',
-  [body('name').notEmpty().withMessage('name is required')],
-  (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      const errorMessages = errors.array().map((error) => error.msg);
-      return res.status(400).json({ errors: errorMessages });
-    }
-    next();
-  },
-  (req, res) => {
-    const { name } = req.body;
-    res.json({ msg: `hello ${name}` });
-  }
+	'/api/v1/test',
+	[
+		body('name')
+		.notEmpty()
+		.withMessage('name is required')
+	],
+	(req, res) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			const errorMessages = errors.array()
+			.map((error) => error.msg);
+			return res.status(400)
+			.json({ errors: errorMessages });
+		}
+		next();
+	},
+	(req, res) => {
+		const { name } = req.body;
+		res.json({ msg: `hello ${name}` });
+	}
 );
 ```
 
@@ -2849,28 +2973,45 @@ const register = async (req, res) => {
 ```
 
 const salt = await bcrypt.genSalt(10);
-This line generates a random "salt" value that will be used to hash the password. A salt is a random value that is added to the password before hashing, which helps to make the resulting hash more resistant to attacks like dictionary attacks and rainbow table attacks. The genSalt() function in bcrypt generates a random salt value using a specified "cost" value. The cost value determines how much CPU time is needed to calculate the hash, and higher cost values result in stronger hashes that are more resistant to attacks.
+This line generates a random "salt" value that will be used to hash the password. A salt is a random value that is added
+to the password before hashing, which helps to make the resulting hash more resistant to attacks like dictionary attacks
+and rainbow table attacks. The genSalt() function in bcrypt generates a random salt value using a specified "cost"value.
+The cost value determines how much CPU time is needed to calculate the hash, and higher cost values result in stronger
+hashes that are more resistant to attacks.
 
-In this example, a cost value of 10 is used to generate the salt. This is a good default value that provides a good balance between security and performance. However, you may need to adjust the cost value based on the specific needs of your application.
+In this example, a cost value of 10 is used to generate the salt. This is a good default value that provides a good
+balance between security and performance. However, you may need to adjust the cost value based on the specific needs of
+your application.
 
 const hashedPassword = await bcrypt.hash(password, salt);
-This line uses the generated salt value to hash the password. The hash() function in bcrypt takes two arguments: the password to be hashed, and the salt value to use for the hash. It then calculates the hash value using a one-way hash function and the specified salt value.
+This line uses the generated salt value to hash the password. The hash() function in bcrypt takes two arguments: the
+password to be hashed, and the salt value to use for the hash. It then calculates the hash value using a one-way hash
+function and the specified salt value.
 
-The resulting hash value is a string that represents the hashed password. This string can then be stored in a database or other storage mechanism to be compared against the user's password when they log in.
+The resulting hash value is a string that represents the hashed password. This string can then be stored in a database
+or other storage mechanism to be compared against the user's password when they log in.
 
-By using a salt value and a one-way hash function, bcrypt helps to ensure that user passwords are stored securely and are resistant to attacks like password cracking and brute-force attacks.
+By using a salt value and a one-way hash function, bcrypt helps to ensure that user passwords are stored securely and
+are resistant to attacks like password cracking and brute-force attacks.
 
 ##### BCRYPT VS BCRYPTJS
 
-bcrypt and bcryptjs are both popular libraries for hashing passwords in Node.js applications. However, bcryptjs is considered to be a better choice for a few reasons:
+bcrypt and bcryptjs are both popular libraries for hashing passwords in Node.js applications. However, bcryptjs is
+considered to be a better choice for a few reasons:
 
-Cross-platform compatibility: bcrypt is a native Node.js module that uses C++ bindings, which can make it difficult to install and use on some platforms. bcryptjs, on the other hand, is a pure JavaScript implementation that works on any platform.
+Cross-platform compatibility: bcrypt is a native Node.js module that uses C++ bindings, which can make it difficult to
+install and use on some platforms. bcryptjs, on the other hand, is a pure JavaScript implementation that works on any
+platform.
 
-Security: While both bcrypt and bcryptjs use the same underlying algorithm for hashing passwords, bcryptjs is designed to be more resistant to certain types of attacks, such as side-channel attacks.
+Security: While both bcrypt and bcryptjs use the same underlying algorithm for hashing passwords, bcryptjs is designed
+to be more resistant to certain types of attacks, such as side-channel attacks.
 
-Ease of use: bcryptjs has a simpler and more intuitive API than bcrypt, which can make it easier to use and integrate into your application.
+Ease of use: bcryptjs has a simpler and more intuitive API than bcrypt, which can make it easier to use and integrate
+into your application.
 
-Overall, while bcrypt and bcryptjs are both good choices for hashing passwords in Node.js applications, bcryptjs is considered to be a better choice for its cross-platform compatibility, improved security, ease of use, and ongoing maintenance.
+Overall, while bcrypt and bcryptjs are both good choices for hashing passwords in Node.js applications, bcryptjs is
+considered to be a better choice for its cross-platform compatibility, improved security, ease of use, and ongoing
+maintenance.
 
 #### Setup Password Utils
 
@@ -2993,7 +3134,9 @@ if (!isValidUser) throw new UnauthenticatedError('invalid credentials');
 
 #### JSON Web Token
 
-A JSON Web Token (JWT) is a compact and secure way of transmitting data between parties. It is often used to authenticate and authorize users in web applications and APIs. JWTs contain information about the user and additional metadata, and can be used to securely transmit this information
+A JSON Web Token (JWT) is a compact and secure way of transmitting data between parties. It is often used to
+authenticate and authorize users in web applications and APIs. JWTs contain information about the user and additional
+metadata, and can be used to securely transmit this information
 
 [Useful Resource](https://jwt.io/introduction)
 
@@ -3014,11 +3157,17 @@ export const createJWT = (payload) => {
 };
 ```
 
-JWT_SECRET represents the secret key used to sign the JWT. When creating a JWT, the payload (data) is signed with this secret key to generate a unique token. The secret key should be kept secure and should not be disclosed to unauthorized parties.
+JWT_SECRET represents the secret key used to sign the JWT. When creating a JWT, the payload (data) is signed with this
+secret key to generate a unique token. The secret key should be kept secure and should not be disclosed to unauthorized
+parties.
 
-JWT_EXPIRES_IN specifies the expiration time for the JWT. It determines how long the token remains valid before it expires. The value of JWT_EXPIRES_IN is typically provided as a duration, such as "1h" for one hour or "7d" for seven days. Once the token expires, it is no longer considered valid and can't be used for authentication or authorization purposes.
+JWT_EXPIRES_IN specifies the expiration time for the JWT. It determines how long the token remains valid before it
+expires. The value of JWT_EXPIRES_IN is typically provided as a duration, such as "1h" for one hour or "7d" for seven
+days. Once the token expires, it is no longer considered valid and can't be used for authentication or authorization
+purposes.
 
-These environment variables (JWT_SECRET and JWT_EXPIRES_IN) are read from the system environment during runtime, allowing for flexibility in configuration without modifying the code.
+These environment variables (JWT_SECRET and JWT_EXPIRES_IN) are read from the system environment during runtime,
+allowing for flexibility in configuration without modifying the code.
 
 authController.js
 
@@ -3046,11 +3195,16 @@ JWT_EXPIRES_IN=
 
 #### HTTP Only Cookie
 
-An HTTP-only cookie is a cookie that can't be accessed by JavaScript running in the browser. It is designed to help prevent cross-site scripting (XSS) attacks, which can be used to steal cookies and other sensitive information.
+An HTTP-only cookie is a cookie that can't be accessed by JavaScript running in the browser. It is designed to help
+prevent cross-site scripting (XSS) attacks, which can be used to steal cookies and other sensitive information.
 
 ##### HTTP Only Cookie VS Local Storage
 
-An HTTP-only cookie is a type of cookie that is designed to be inaccessible to JavaScript running in the browser. It is primarily used for authentication purposes and is a more secure way of storing sensitive information like user tokens. Local storage, on the other hand, is a browser-based storage mechanism that is accessible to JavaScript, and is used to store application data like preferences or user-generated content. While local storage is convenient, it is not a secure way of storing sensitive information as it can be accessed and modified by JavaScript running in the browser.
+An HTTP-only cookie is a type of cookie that is designed to be inaccessible to JavaScript running in the browser. It is
+primarily used for authentication purposes and is a more secure way of storing sensitive information like user tokens.
+Local storage, on the other hand, is a browser-based storage mechanism that is accessible to JavaScript, and is used to
+store application data like preferences or user-generated content. While local storage is convenient, it is not a secure
+way of storing sensitive information as it can be accessed and modified by JavaScript running in the browser.
 
 authControllers.js
 
@@ -3070,19 +3224,26 @@ res.status(StatusCodes.CREATED).json({ msg: 'user logged in' });
 const oneDay = 1000 * 60 * 60 * 24;
 ```
 
-This line defines a constant oneDay that represents the number of milliseconds in a day. This value is used later to set the expiration time for the cookie.
+This line defines a constant oneDay that represents the number of milliseconds in a day. This value is used later to set
+the expiration time for the cookie.
 
 ```js
 res.cookie('token', token, {...});:
 ```
 
-This line sets a cookie with the name "token" and a value of token, which is the JWT that was generated for the user. The ... represents an object containing additional options for the cookie.
+This line sets a cookie with the name "token" and a value of token, which is the JWT that was generated for the user.
+The ... represents an object containing additional options for the cookie.
 
-httpOnly: true: This option makes the cookie inaccessible to JavaScript running in the browser. This helps to prevent cross-site scripting (XSS) attacks, which can be used to steal cookies and other sensitive information.
+httpOnly: true: This option makes the cookie inaccessible to JavaScript running in the browser. This helps to prevent
+cross-site scripting (XSS) attacks, which can be used to steal cookies and other sensitive information.
 
-expires: new Date(Date.now() + oneDay): This option sets the expiration time for the cookie. In this case, the cookie will expire one day from the current time (as represented by Date.now() + oneDay).
+expires: new Date(Date.now() + oneDay): This option sets the expiration time for the cookie. In this case, the cookie
+will expire one day from the current time (as represented by Date.now() + oneDay).
 
-secure: process.env.NODE_ENV === 'production': This option determines whether the cookie should be marked as secure or not. If the NODE_ENV environment variable is set to "production", then the cookie is marked as secure, which means it can only be transmitted over HTTPS. This helps to prevent man-in-the-middle (MITM) attacks, which can intercept and modify cookies that are transmitted over unsecured connections.
+secure: process.env.NODE_ENV === 'production': This option determines whether the cookie should be marked as secure or
+not. If the NODE_ENV environment variable is set to "production", then the cookie is marked as secure, which means it
+can only be transmitted over HTTPS. This helps to prevent man-in-the-middle (MITM) attacks, which can intercept and
+modify cookies that are transmitted over unsecured connections.
 
 jobsController.js
 
@@ -3144,6 +3305,7 @@ server.js
 
 ```js
 import cookieParser from 'cookie-parser';
+
 app.use(cookieParser());
 ```
 
@@ -3315,12 +3477,13 @@ routes/userRouter.js
 
 ```js
 import { Router } from 'express';
+
 const router = Router();
 
 import {
-  getCurrentUser,
-  getApplicationStats,
-  updateUser,
+	getCurrentUser,
+	getApplicationStats,
+	updateUser,
 } from '../controllers/userController.js';
 
 router.get('/current-user', getCurrentUser);
@@ -3430,8 +3593,8 @@ export const authorizePermissions = (...roles) => {
 import { authorizePermissions } from '../middleware/authMiddleware.js';
 
 router.get('/admin/app-stats', [
-  authorizePermissions('admin'),
-  getApplicationStats,
+	authorizePermissions('admin'),
+	getApplicationStats,
 ]);
 ```
 
@@ -3457,7 +3620,7 @@ server.js
 
 ```js
 app.get('/api/v1/test', (req, res) => {
-  res.json({ msg: 'test route' });
+	res.json({ msg: 'test route' });
 });
 ```
 
@@ -3494,20 +3657,28 @@ fetch('/api/v1/test')
   .then((data) => console.log(data));
 ```
 
-This code configures a proxy rule for the development server, specifically for requests that start with /api. Let's go through each property:
+This code configures a proxy rule for the development server, specifically for requests that start with /api. Let's go
+through each property:
 
-'/api': This is the path to match. If a request is made to the development server with a path that starts with /api, the proxy rule will be applied.
-target: 'http://localhost:5100/api': This specifies the target URL where the requests will be redirected. In this case, any request that matches the /api path will be forwarded to http://localhost:5100/api.
+'/api': This is the path to match. If a request is made to the development server with a path that starts with /api, the
+proxy rule will be applied.
+target: 'http://localhost:5100/api': This specifies the target URL where the requests will be redirected. In this case,
+any request that matches the /api path will be forwarded to http://localhost:5100/api.
 
-changeOrigin: true: When set to true, this property changes the origin of the request to match the target URL. This can be useful when working with CORS (Cross-Origin Resource Sharing) restrictions.
+changeOrigin: true: When set to true, this property changes the origin of the request to match the target URL. This can
+be useful when working with CORS (Cross-Origin Resource Sharing) restrictions.
 
-rewrite: (path) => path.replace(/^\/api/, ''): This property allows you to modify the path of the request before it is forwarded to the target. In this case, the rewrite function uses a regular expression (/^\/api/) to remove the /api prefix from the path. For example, if a request is made to /api/users, the rewritten path will be /users.
+rewrite: (path) => path.replace(/^\/api/, ''): This property allows you to modify the path of the request before it is
+forwarded to the target. In this case, the rewrite function uses a regular expression (/^\/api/) to remove the /api
+prefix from the path. For example, if a request is made to /api/users, the rewritten path will be /users.
 
-To summarize, these lines of code configure a proxy rule for requests starting with /api on the development server. The requests will be redirected to http://localhost:5100/api, with the /api prefix removed from the path.
+To summarize, these lines of code configure a proxy rule for requests starting with /api on the development server. The
+requests will be redirected to http://localhost:5100/api, with the /api prefix removed from the path.
 
 #### Concurrently
 
-The concurrently npm package is a utility that allows you to run multiple commands concurrently in the same terminal window. It provides a convenient way to execute multiple tasks or processes simultaneously.
+The concurrently npm package is a utility that allows you to run multiple commands concurrently in the same terminal
+window. It provides a convenient way to execute multiple tasks or processes simultaneously.
 
 ```sh
 npm i concurrently@8.0.1
@@ -3522,11 +3693,15 @@ npm i concurrently@8.0.1
   },
 ```
 
-By default, when a command fails, concurrently continues running the remaining commands. However, when --kill-others-on-fail is specified, if any of the commands fail, concurrently will immediately terminate all the other running commands.
+By default, when a command fails, concurrently continues running the remaining commands. However, when
+--kill-others-on-fail is specified, if any of the commands fail, concurrently will immediately terminate all the other
+running commands.
 
 #### Axios
 
-Axios is a popular JavaScript library that simplifies the process of making HTTP requests from web browsers or Node.js. It provides a simple and elegant API for performing asynchronous HTTP requests, supporting features such as making GET, POST, PUT, and DELETE requests, handling request and response headers, handling request cancellation, and more.
+Axios is a popular JavaScript library that simplifies the process of making HTTP requests from web browsers or Node.js.
+It provides a simple and elegant API for performing asynchronous HTTP requests, supporting features such as making GET,
+POST, PUT, and DELETE requests, handling request and response headers, handling request cancellation, and more.
 
 [Axios Docs](https://axios-http.com/docs/intro)
 
@@ -3586,7 +3761,10 @@ export default MyForm;
 
 #### React Router - Action
 
-Route actions are the "writes" to route loader "reads". They provide a way for apps to perform data mutations with simple HTML and HTTP semantics while React Router abstracts away the complexity of asynchronous UI and revalidation. This gives you the simple mental model of HTML + HTTP (where the browser handles the asynchrony and revalidation) with the behavior and UX capabilities of modern SPAs.
+Route actions are the "writes" to route loader "reads". They provide a way for apps to perform data mutations with
+simple HTML and HTTP semantics while React Router abstracts away the complexity of asynchronous UI and revalidation.
+This gives you the simple mental model of HTML + HTTP (where the browser handles the asynchrony and revalidation) with
+the behavior and UX capabilities of modern SPAs.
 
 Register.jsx
 
@@ -3656,7 +3834,8 @@ import { action as registerAction } from './pages/Register';
 
 #### useNavigation() and navigation.state
 
-This hook tells you everything you need to know about a page navigation to build pending navigation indicators and optimistic UI on data mutations. Things like:
+This hook tells you everything you need to know about a page navigation to build pending navigation indicators and
+optimistic UI on data mutations. Things like:
 
 - Global loading indicators
 - Adding busy indicators to submit buttons
@@ -3703,11 +3882,13 @@ main.jsx
 ```js
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-    <ToastContainer position='top-center' />
-  </React.StrictMode>
+
+ReactDOM.createRoot(document.getElementById('root'))
+.render(
+	<React.StrictMode>
+		<App/>
+		<ToastContainer position='top-center'/>
+	</React.StrictMode>
 );
 ```
 
@@ -3740,43 +3921,43 @@ import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
 export const action = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  try {
-    await customFetch.post('/auth/login', data);
-    toast.success('Login successful');
-    return redirect('/dashboard');
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
+	const formData = await request.formData();
+	const data = Object.fromEntries(formData);
+	try {
+		await customFetch.post('/auth/login', data);
+		toast.success('Login successful');
+		return redirect('/dashboard');
+	} catch (error) {
+		toast.error(error?.response?.data?.msg);
+		return error;
+	}
 };
 
 const Login = () => {
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
-  return (
-    <Wrapper>
-      <Form method='post' className='form'>
-        <Logo />
-        <h4>login</h4>
-        <FormRow type='email' name='email' defaultValue='john@gmail.com' />
-        <FormRow type='password' name='password' defaultValue='secret123' />
-        <button type='submit' className='btn btn-block' disabled={isSubmitting}>
-          {isSubmitting ? 'submitting...' : 'submit'}
-        </button>
-        <button type='button' className='btn btn-block'>
-          explore the app
-        </button>
-        <p>
-          Not a member yet?
-          <Link to='/register' className='member-btn'>
-            Register
-          </Link>
-        </p>
-      </Form>
-    </Wrapper>
-  );
+	const navigation = useNavigation();
+	const isSubmitting = navigation.state === 'submitting';
+	return (
+		<Wrapper>
+			<Form method='post' className='form'>
+				<Logo/>
+				<h4>login</h4>
+				<FormRow type='email' name='email' defaultValue='john@gmail.com'/>
+				<FormRow type='password' name='password' defaultValue='secret123'/>
+				<button type='submit' className='btn btn-block' disabled={isSubmitting}>
+					{isSubmitting ? 'submitting...' : 'submit'}
+				</button>
+				<button type='button' className='btn btn-block'>
+					explore the app
+				</button>
+				<p>
+					Not a member yet?
+					<Link to='/register' className='member-btn'>
+						Register
+					</Link>
+				</p>
+			</Form>
+		</Wrapper>
+	);
 };
 export default Login;
 ```
@@ -3834,40 +4015,40 @@ import { Outlet, redirect, useLoaderData } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 
 export const loader = async () => {
-  try {
-    const { data } = await customFetch('/users/current-user');
-    return data;
-  } catch (error) {
-    return redirect('/');
-  }
+	try {
+		const { data } = await customFetch('/users/current-user');
+		return data;
+	} catch (error) {
+		return redirect('/');
+	}
 };
 
-
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
-  const { user } = useLoaderData();
-
-  return (
-    <DashboardContext.Provider
-      value={{
-        user,
-        showSidebar,
-        isDarkTheme,
-        toggleDarkTheme,
-        toggleSidebar,
-        logoutUser,
-      }}
-    >
-      <Wrapper>
-        <main className='dashboard'>
-         ...
-            <div className='dashboard-page'>
-              <Outlet context={{ user }} />
-            </div>
-          </div>
-        </main>
-      </Wrapper>
-    </DashboardContext.Provider>
-  );
+	const { user } = useLoaderData();
+	
+	return (
+		<DashboardContext.Provider
+			value={{
+				user,
+				showSidebar,
+				isDarkTheme,
+				toggleDarkTheme,
+				toggleSidebar,
+				logoutUser,
+			}}
+		>
+			<Wrapper>
+				<main className='dashboard'>
+					...
+					<div className='dashboard-page'>
+						<Outlet context={{ user }}/>
+					</div>
+				</div>
+			</main>
+		</Wrapper>
+</DashboardContext.Provider>
+)
+	;
 };
 export const useDashboardContext = () => useContext(DashboardContext);
 export default DashboardLayout;
@@ -3883,13 +4064,13 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const DashboardLayout = () => {
-  const navigate = useNavigate();
-
-  const logoutUser = async () => {
-    navigate('/');
-    await customFetch.get('/auth/logout');
-    toast.success('Logging out...');
-  };
+	const navigate = useNavigate();
+	
+	const logoutUser = async () => {
+		navigate('/');
+		await customFetch.get('/auth/logout');
+		toast.success('Logging out...');
+	};
 };
 ```
 
@@ -4130,26 +4311,26 @@ import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
 
 export const loader = async ({ request }) => {
-  try {
-    const { data } = await customFetch.get('/jobs');
-    return {
-      data,
-    };
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
+	try {
+		const { data } = await customFetch.get('/jobs');
+		return {
+			data,
+		};
+	} catch (error) {
+		toast.error(error?.response?.data?.msg);
+		return error;
+	}
 };
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
-
-  return (
-    <>
-      <SearchContainer />
-      <JobsContainer />
-    </>
-  );
+	const { data } = useLoaderData();
+	
+	return (
+		<>
+			<SearchContainer/>
+			<JobsContainer/>
+		</>
+	);
 };
 export default AllJobs;
 ```
@@ -4160,14 +4341,14 @@ export default AllJobs;
 const AllJobsContext = createContext();
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
-
-  return (
-    <AllJobsContext.Provider value={{ data }}>
-      <SearchContainer />
-      <JobsContainer />
-    </AllJobsContext.Provider>
-  );
+	const { data } = useLoaderData();
+	
+	return (
+		<AllJobsContext.Provider value={{ data }}>
+			<SearchContainer/>
+			<JobsContainer/>
+		</AllJobsContext.Provider>
+	);
 };
 
 export const useAllJobsContext = () => useContext(AllJobsContext);
@@ -4186,25 +4367,25 @@ import Wrapper from '../assets/wrappers/JobsContainer';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const JobsContainer = () => {
-  const { data } = useAllJobsContext();
-  const { jobs } = data;
-  if (jobs.length === 0) {
-    return (
-      <Wrapper>
-        <h2>No jobs to display...</h2>
-      </Wrapper>
-    );
-  }
-
-  return (
-    <Wrapper>
-      <div className='jobs'>
-        {jobs.map((job) => {
-          return <Job key={job._id} {...job} />;
-        })}
-      </div>
-    </Wrapper>
-  );
+	const { data } = useAllJobsContext();
+	const { jobs } = data;
+	if (jobs.length === 0) {
+		return (
+			<Wrapper>
+				<h2>No jobs to display...</h2>
+			</Wrapper>
+		);
+	}
+	
+	return (
+		<Wrapper>
+			<div className='jobs'>
+				{jobs.map((job) => {
+					return <Job key={job._id} {...job} />;
+				})}
+			</div>
+		</Wrapper>
+	);
 };
 
 export default JobsContainer;
@@ -4634,24 +4815,28 @@ import { useLoaderData, redirect } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import Wrapper from '../assets/wrappers/StatsContainer';
 import { toast } from 'react-toastify';
+
 export const loader = async () => {
-  try {
-    const response = await customFetch.get('/users/admin/app-stats');
-    return response.data;
-  } catch (error) {
-    toast.error('You are not authorized to view this page');
-    return redirect('/dashboard');
-  }
+	try {
+		const response = await customFetch.get('/users/admin/app-stats');
+		return response.data;
+	} catch (error) {
+		toast.error('You are not authorized to view this page');
+		return redirect('/dashboard');
+	}
 };
 
 const Admin = () => {
-  const { users, jobs } = useLoaderData();
-
-  return (
-    <Wrapper>
-      <h2>admin page</h2>
-    </Wrapper>
-  );
+	const {
+		users,
+		jobs
+	} = useLoaderData();
+	
+	return (
+		<Wrapper>
+			<h2>admin page</h2>
+		</Wrapper>
+	);
 };
 export default Admin;
 ```
@@ -4932,7 +5117,10 @@ export const action = async ({ request }) => {
 npm i multer@1.4.5
 ```
 
-Multer is a popular middleware package for handling multipart/form-data in Node.js web applications. It is commonly used for handling file uploads. Multer simplifies the process of accepting and storing files submitted through HTTP requests by providing an easy-to-use API. It integrates seamlessly with Express.js and allows developers to define upload destinations, file size limits, and other configurations.
+Multer is a popular middleware package for handling multipart/form-data in Node.js web applications. It is commonly used
+for handling file uploads. Multer simplifies the process of accepting and storing files submitted through HTTP requests
+by providing an easy-to-use API. It integrates seamlessly with Express.js and allows developers to define upload
+destinations, file size limits, and other configurations.
 
 - create middleware/multerMiddleware.js
 - setup multer
@@ -4971,19 +5159,32 @@ router.patch(
 
 First, the multer package is imported.
 
-Then, a storage object is created using multer.diskStorage(). This object specifies the configuration for storing uploaded files. In this case, the destination function determines the directory where the uploaded files will be saved, which is set to 'public/uploads'. The filename function defines the name of the uploaded file, which is set to the original filename.
+Then, a storage object is created using multer.diskStorage(). This object specifies the configuration for storing
+uploaded files. In this case, the destination function determines the directory where the uploaded files will be saved,
+which is set to 'public/uploads'. The filename function defines the name of the uploaded file, which is set to the
+original filename.
 
-Next, a multer middleware is created by passing the storage object as a configuration option. This multer middleware will be used to handle file uploads in the application.
+Next, a multer middleware is created by passing the storage object as a configuration option. This multer middleware
+will be used to handle file uploads in the application.
 
-In this case, upload is an instance of the Multer middleware that was created earlier. The .single() method is called on this instance to indicate that only one file will be uploaded. The argument 'avatar' specifies the name of the field in the HTTP request that corresponds to the uploaded file.
+In this case, upload is an instance of the Multer middleware that was created earlier. The .single() method is called on
+this instance to indicate that only one file will be uploaded. The argument 'avatar' specifies the name of the field in
+the HTTP request that corresponds to the uploaded file.
 
-When this middleware is used in an HTTP route handler, it will process the incoming request and extract the file attached to the 'avatar' field. Multer will then save the file according to the specified storage configuration, which includes the destination directory and filename logic defined earlier. The uploaded file can be accessed in the route handler using req.file.
+When this middleware is used in an HTTP route handler, it will process the incoming request and extract the file
+attached to the 'avatar' field. Multer will then save the file according to the specified storage configuration, which
+includes the destination directory and filename logic defined earlier. The uploaded file can be accessed in the route
+handler using req.file.
 
 #### Cloudinary - Create Account/Get API Keys
 
 [Cloudinary](https://cloudinary.com/)
 
-Cloudinary is a cloud-based media management platform that helps businesses store, optimize, and deliver images and videos across the web. It provides developers with an easy way to upload, manipulate, and serve media assets, enabling faster and more efficient delivery of visual content on websites and applications. Cloudinary also offers features like automatic resizing, format conversion, and responsive delivery to ensure optimal user experiences across different devices and network conditions.
+Cloudinary is a cloud-based media management platform that helps businesses store, optimize, and deliver images and
+videos across the web. It provides developers with an easy way to upload, manipulate, and serve media assets, enabling
+faster and more efficient delivery of visual content on websites and applications. Cloudinary also offers features like
+automatic resizing, format conversion, and responsive delivery to ensure optimal user experiences across different
+devices and network conditions.
 
 .env
 
@@ -5120,30 +5321,31 @@ export default SubmitBtn;
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const loginDemoUser = async () => {
-    const data = {
-      email: 'test@test.com',
-      password: 'secret123',
-    };
-    try {
-      await customFetch.post('/auth/login', data);
-      toast.success('take a test drive');
-      navigate('/dashboard');
-    } catch (error) {
-      toast.error(error?.response?.data?.msg);
-    }
-  };
-  return (
-    <Wrapper>
-      ...
-        <button type='button' className='btn btn-block' onClick={loginDemoUser}>
-          explore the app
-        </button>
-        ...
-      </Form>
-    </Wrapper>
-  );
+	const navigate = useNavigate();
+	const loginDemoUser = async () => {
+		const data = {
+			email: 'test@test.com',
+			password: 'secret123',
+		};
+		try {
+			await customFetch.post('/auth/login', data);
+			toast.success('take a test drive');
+			navigate('/dashboard');
+		} catch (error) {
+			toast.error(error?.response?.data?.msg);
+		}
+	};
+	return (
+		<Wrapper>
+			...
+			<button type='button' className='btn btn-block' onClick={loginDemoUser}>
+				explore the app
+			</button>
+			...
+		</Form>
+</Wrapper>
+)
+	;
 };
 export default Login;
 ```
@@ -5271,7 +5473,8 @@ export const showStats = async (req, res) => {
 
 [MongoDB Docs](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/)
 
-The MongoDB aggregation pipeline is like a factory line for data. Data enters, it goes through different stages like cleaning, sorting, or grouping, and comes out at the end changed in some way. It's a way to process data inside MongoDB.
+The MongoDB aggregation pipeline is like a factory line for data. Data enters, it goes through different stages like
+cleaning, sorting, or grouping, and comes out at the end changed in some way. It's a way to process data inside MongoDB.
 
 jobController.js
 
@@ -5332,11 +5535,18 @@ let stats = await Job.aggregate([
 ]);
 ```
 
-let stats = await Job.aggregate([ ... ]); This line says we're going to perform an aggregation operation on the Job collection in MongoDB and save the result in a variable called stats. The await keyword is used to wait for the operation to finish before continuing, as the operation is asynchronous (i.e., it runs in the background).
+let stats = await Job.aggregate([ ... ]); This line says we're going to perform an aggregation operation on the Job
+collection in MongoDB and save the result in a variable called stats. The await keyword is used to wait for the
+operation to finish before continuing, as the operation is asynchronous (i.e., it runs in the background).
 
-{ $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } } This is the first stage of the pipeline. It filters the jobs so that only the ones created by the user specified by req.user.userId are passed to the next stage. The new mongoose.Types.ObjectId(req.user.userId) part converts req.user.userId into an ObjectId (which is the format MongoDB uses for ids).
+{ $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } } This is the first stage of the pipeline. It
+filters the jobs so that only the ones created by the user specified by req.user.userId are passed to the next stage.
+The new mongoose.Types.ObjectId(req.user.userId) part converts req.user.userId into an ObjectId (which is the format
+MongoDB uses for ids).
 
-{ $group: { _id: '$jobStatus', count: { $sum: 1 } } } This is the second stage of the pipeline. It groups the remaining jobs by their status (the jobStatus field). For each group, it calculates the count of jobs by adding 1 for each job ({ $sum: 1 }), and stores this in a field called count.
+{ $group: { _id: '$jobStatus', count: { $sum: 1 } } } This is the second stage of the pipeline. It groups the remaining
+jobs by their status (the jobStatus field). For each group, it calculates the count of jobs by adding 1 for each job ({
+$sum: 1 }), and stores this in a field called count.
 
 ```js
 let monthlyApplications = await Job.aggregate([
@@ -5352,17 +5562,26 @@ let monthlyApplications = await Job.aggregate([
 ]);
 ```
 
-let monthlyApplications = await Job.aggregate([ ... ]); This line indicates that an aggregation operation will be performed on the Job collection in MongoDB. The result will be stored in the variable monthlyApplications. The await keyword ensures that the code waits for this operation to complete before proceeding, as it is an asynchronous operation.
+let monthlyApplications = await Job.aggregate([ ... ]); This line indicates that an aggregation operation will be
+performed on the Job collection in MongoDB. The result will be stored in the variable monthlyApplications. The await
+keyword ensures that the code waits for this operation to complete before proceeding, as it is an asynchronous
+operation.
 
-{ $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } } This is the first stage of the pipeline. It filters the jobs to only those created by the user identified by req.user.userId.
+{ $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } } This is the first stage of the pipeline. It
+filters the jobs to only those created by the user identified by req.user.userId.
 
-{ $group: { _id: { year: { $year: '$createdAt' }, month: { $month: '$createdAt' } }, count: { $sum: 1 } } } This is the second stage of the pipeline. It groups the remaining jobs based on the year and month when they were created. For each group, it calculates the count of jobs by adding 1 for each job in the group.
+{ $group: { _id: { year: { $year: '$createdAt' }, month: { $month: '$createdAt' } }, count: { $sum: 1 } } } This is the
+second stage of the pipeline. It groups the remaining jobs based on the year and month when they were created. For each
+group, it calculates the count of jobs by adding 1 for each job in the group.
 
-{ $sort: { '\_id.year': -1, '\_id.month': -1 } } This is the third stage of the pipeline. It sorts the groups by year and month in descending order. The -1 indicates descending order. So it starts with the most recent year and month.
+{ $sort: { '\_id.year': -1, '\_id.month': -1 } } This is the third stage of the pipeline. It sorts the groups by year
+and month in descending order. The -1 indicates descending order. So it starts with the most recent year and month.
 
-{ $limit: 6 } This is the fourth and last stage of the pipeline. It limits the output to the top 6 groups, after sorting. This is effectively getting the job count for the last 6 months.
+{ $limit: 6 } This is the fourth and last stage of the pipeline. It limits the output to the top 6 groups, after
+sorting. This is effectively getting the job count for the last 6 months.
 
-So, monthlyApplications will be an array with up to 6 elements, each representing the number of jobs created by the user in a specific month and year. The array will be sorted by year and month, starting with the most recent.
+So, monthlyApplications will be an array with up to 6 elements, each representing the number of jobs created by the user
+in a specific month and year. The array will be sorted by year and month, starting with the most recent.
 
 #### Stats - Front-End Setup
 
@@ -5567,7 +5786,11 @@ export default Wrapper;
 
 jobController.js
 
-Query parameters, also known as query strings or URL parameters, are used to pass information to a web server through the URL of a webpage. They are typically appended to the end of a URL after a question mark (?) and separated by ampersands (&). Query parameters consist of a key-value pair, where the key represents the parameter name and the value represents the corresponding data being passed. They are commonly used in web applications to provide additional context or parameters for server-side processing or to filter and sort data.
+Query parameters, also known as query strings or URL parameters, are used to pass information to a web server through
+the URL of a webpage. They are typically appended to the end of a URL after a question mark (?) and separated by
+ampersands (&). Query parameters consist of a key-value pair, where the key represents the parameter name and the value
+represents the corresponding data being passed. They are commonly used in web applications to provide additional context
+or parameters for server-side processing or to filter and sort data.
 
 ```js
 export const getAllJobs = async (req, res) => {
@@ -5630,41 +5853,47 @@ import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const SearchContainer = () => {
-  return (
-    <Wrapper>
-      <Form className='form'>
-        <h5 className='form-title'>search form</h5>
-        <div className='form-center'>
-          {/* search position */}
-
-          <FormRow type='search' name='search' defaultValue='a' />
-          <FormRowSelect
-            labelText='job status'
-            name='jobStatus'
-            list={['all', ...Object.values(JOB_STATUS)]}
-            defaultValue='all'
-          />
-          <FormRowSelect
-            labelText='job type'
-            name='jobType'
-            list={['all', ...Object.values(JOB_TYPE)]}
-            defaultValue='all'
-          />
-          <FormRowSelect
-            name='sort'
-            defaultValue='newest'
-            list={[...Object.values(JOB_SORT_BY)]}
-          />
-
-          <Link to='/dashboard/all-jobs' className='btn form-btn delete-btn'>
-            Reset Search Values
-          </Link>
-          {/* TEMP!!!! */}
-          <SubmitBtn formBtn />
-        </div>
-      </Form>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<Form className='form'>
+				<h5 className='form-title'>search form</h5>
+				<div className='form-center'>
+					{/* search position */}
+					
+					<FormRow type='search' name='search' defaultValue='a'/>
+					<FormRowSelect
+						labelText='job status'
+						name='jobStatus'
+						list={[
+							'all',
+							...Object.values(JOB_STATUS)
+						]}
+						defaultValue='all'
+					/>
+					<FormRowSelect
+						labelText='job type'
+						name='jobType'
+						list={[
+							'all',
+							...Object.values(JOB_TYPE)
+						]}
+						defaultValue='all'
+					/>
+					<FormRowSelect
+						name='sort'
+						defaultValue='newest'
+						list={[...Object.values(JOB_SORT_BY)]}
+					/>
+					
+					<Link to='/dashboard/all-jobs' className='btn form-btn delete-btn'>
+						Reset Search Values
+					</Link>
+					{/* TEMP!!!! */}
+					<SubmitBtn formBtn/>
+				</div>
+			</Form>
+		</Wrapper>
+	);
 };
 
 export default SearchContainer;
@@ -5680,36 +5909,43 @@ import { JobsContainer, SearchContainer } from '../components';
 import customFetch from '../utils/customFetch';
 import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
+
 const AllJobsContext = createContext();
 export const loader = async ({ request }) => {
-  try {
-    const params = Object.fromEntries([
-      ...new URL(request.url).searchParams.entries(),
-    ]);
-
-    const { data } = await customFetch.get('/jobs', {
-      params,
-    });
-
-    return {
-      data,
-      searchValues: { ...params },
-    };
-  } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
-  }
+	try {
+		const params = Object.fromEntries([
+			...new URL(request.url).searchParams.entries(),
+		]);
+		
+		const { data } = await customFetch.get('/jobs', {
+			params,
+		});
+		
+		return {
+			data,
+			searchValues: { ...params },
+		};
+	} catch (error) {
+		toast.error(error.response.data.msg);
+		return error;
+	}
 };
 
 const AllJobs = () => {
-  const { data, searchValues } = useLoaderData();
-
-  return (
-    <AllJobsContext.Provider value={{ data, searchValues }}>
-      <SearchContainer />
-      <JobsContainer />
-    </AllJobsContext.Provider>
-  );
+	const {
+		data,
+		searchValues
+	} = useLoaderData();
+	
+	return (
+		<AllJobsContext.Provider value={{
+			data,
+			searchValues
+		}}>
+			<SearchContainer/>
+			<JobsContainer/>
+		</AllJobsContext.Provider>
+	);
 };
 export default AllJobs;
 
@@ -5722,17 +5958,26 @@ const params = Object.fromEntries([
 ]);
 ```
 
-new URL(request.url): This creates a new URL object by passing the request.url to the URL constructor. The URL object provides various methods and properties to work with URLs.
+new URL(request.url): This creates a new URL object by passing the request.url to the URL constructor. The URL object
+provides various methods and properties to work with URLs.
 
-.searchParams: The searchParams property of the URL object gives you access to the query parameters in the URL. It is an instance of the URLSearchParams class, which provides methods to manipulate and access the parameters.
+.searchParams: The searchParams property of the URL object gives you access to the query parameters in the URL. It is an
+instance of the URLSearchParams class, which provides methods to manipulate and access the parameters.
 
-.entries(): The entries() method of searchParams returns an iterator containing arrays of key-value pairs for each query parameter. Each array contains two elements: the parameter name and its corresponding value.
+.entries(): The entries() method of searchParams returns an iterator containing arrays of key-value pairs for each query
+parameter. Each array contains two elements: the parameter name and its corresponding value.
 
-([...new URL(request.url).searchParams.entries()]): The spread operator ... is used to convert the iterator obtained from searchParams.entries() into an array. This allows us to pass the array to the Object.fromEntries() method.
+([...new URL(request.url).searchParams.entries()]): The spread operator ... is used to convert the iterator obtained
+from searchParams.entries() into an array. This allows us to pass the array to the Object.fromEntries() method.
 
-Object.fromEntries(): This static method creates an object from an array of key-value pairs. It takes an iterable (in this case, the array of parameter key-value pairs) and returns a new object where the keys and values are derived from the iterable.
+Object.fromEntries(): This static method creates an object from an array of key-value pairs. It takes an iterable (in
+this case, the array of parameter key-value pairs) and returns a new object where the keys and values are derived from
+the iterable.
 
-Putting it all together, the code retrieves the URL from the request.url property, extracts the search parameters using the searchParams property, converts them into an array of key-value pairs using entries(), and finally uses Object.fromEntries() to create an object with the parameter names as keys and their corresponding values. The resulting object, params, contains all the search parameters from the URL.
+Putting it all together, the code retrieves the URL from the request.url property, extracts the search parameters using
+the searchParams property, converts them into an array of key-value pairs using entries(), and finally uses
+Object.fromEntries() to create an object with the parameter names as keys and their corresponding values. The resulting
+object, params, contains all the search parameters from the URL.
 
 #### Submit Form Programmatically
 
@@ -5748,60 +5993,72 @@ import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { Form, useSubmit, Link } from 'react-router-dom';
 import { JOB_TYPE, JOB_STATUS, JOB_SORT_BY } from '../../../utils/constants';
 import { useAllJobsContext } from '../pages/AllJobs';
+
 const SearchContainer = () => {
-  const { searchValues } = useAllJobsContext();
-  const { search, jobStatus, jobType, sort } = searchValues;
-
-  const submit = useSubmit();
-
-  return (
-    <Wrapper>
-      <Form className='form'>
-        <h5 className='form-title'>search form</h5>
-        <div className='form-center'>
-          {/* search position */}
-
-          <FormRow
-            type='search'
-            name='search'
-            defaultValue={search}
-            onChange={(e) => {
-              submit(e.currentTarget.form);
-            }}
-          />
-          <FormRowSelect
-            labelText='job status'
-            name='jobStatus'
-            list={['all', ...Object.values(JOB_STATUS)]}
-            defaultValue={jobStatus}
-            onChange={(e) => {
-              submit(e.currentTarget.form);
-            }}
-          />
-          <FormRowSelect
-            labelText='job type'
-            name='jobType'
-            defaultValue={jobType}
-            list={['all', ...Object.values(JOB_TYPE)]}
-            onChange={(e) => {
-              submit(e.currentTarget.form);
-            }}
-          />
-          <FormRowSelect
-            name='sort'
-            defaultValue={sort}
-            list={[...Object.values(JOB_SORT_BY)]}
-            onChange={(e) => {
-              submit(e.currentTarget.form);
-            }}
-          />
-          <Link to='/dashboard/all-jobs' className='btn form-btn delete-btn'>
-            Reset Search Values
-          </Link>
-        </div>
-      </Form>
-    </Wrapper>
-  );
+	const { searchValues } = useAllJobsContext();
+	const {
+		search,
+		jobStatus,
+		jobType,
+		sort
+	} = searchValues;
+	
+	const submit = useSubmit();
+	
+	return (
+		<Wrapper>
+			<Form className='form'>
+				<h5 className='form-title'>search form</h5>
+				<div className='form-center'>
+					{/* search position */}
+					
+					<FormRow
+						type='search'
+						name='search'
+						defaultValue={search}
+						onChange={(e) => {
+							submit(e.currentTarget.form);
+						}}
+					/>
+					<FormRowSelect
+						labelText='job status'
+						name='jobStatus'
+						list={[
+							'all',
+							...Object.values(JOB_STATUS)
+						]}
+						defaultValue={jobStatus}
+						onChange={(e) => {
+							submit(e.currentTarget.form);
+						}}
+					/>
+					<FormRowSelect
+						labelText='job type'
+						name='jobType'
+						defaultValue={jobType}
+						list={[
+							'all',
+							...Object.values(JOB_TYPE)
+						]}
+						onChange={(e) => {
+							submit(e.currentTarget.form);
+						}}
+					/>
+					<FormRowSelect
+						name='sort'
+						defaultValue={sort}
+						list={[...Object.values(JOB_SORT_BY)]}
+						onChange={(e) => {
+							submit(e.currentTarget.form);
+						}}
+					/>
+					<Link to='/dashboard/all-jobs' className='btn form-btn delete-btn'>
+						Reset Search Values
+					</Link>
+				</div>
+			</Form>
+		</Wrapper>
+	);
 };
 
 export default SearchContainer;
@@ -5811,7 +6068,9 @@ export default SearchContainer;
 
 [JS Nuggets - Debounce](https://youtu.be/tYx6pXdvt1s)
 
-In JavaScript, debounce is a way to limit how often a function gets called. It helps prevent rapid or repeated function executions by introducing a delay. This is useful for tasks like handling user input, where you want to wait for a pause before triggering an action to avoid unnecessary processing.
+In JavaScript, debounce is a way to limit how often a function gets called. It helps prevent rapid or repeated function
+executions by introducing a delay. This is useful for tasks like handling user input, where you want to wait for a pause
+before triggering an action to avoid unnecessary processing.
 
 ```js
 const debounce = (onChange) => {
@@ -5847,29 +6106,33 @@ import PageBtnContainer from './PageBtnContainer';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const JobsContainer = () => {
-  const { data } = useAllJobsContext();
-  const { jobs, totalJobs, numOfPages } = data;
-  if (jobs.length === 0) {
-    return (
-      <Wrapper>
-        <h2>No jobs to display...</h2>
-      </Wrapper>
-    );
-  }
-
-  return (
-    <Wrapper>
-      <h5>
-        {totalJobs} job{jobs.length > 1 && 's'} found
-      </h5>
-      <div className='jobs'>
-        {jobs.map((job) => {
-          return <Job key={job._id} {...job} />;
-        })}
-      </div>
-      {numOfPages > 1 && <PageBtnContainer />}
-    </Wrapper>
-  );
+	const { data } = useAllJobsContext();
+	const {
+		jobs,
+		totalJobs,
+		numOfPages
+	} = data;
+	if (jobs.length === 0) {
+		return (
+			<Wrapper>
+				<h2>No jobs to display...</h2>
+			</Wrapper>
+		);
+	}
+	
+	return (
+		<Wrapper>
+			<h5>
+				{totalJobs} job{jobs.length > 1 && 's'} found
+			</h5>
+			<div className='jobs'>
+				{jobs.map((job) => {
+					return <Job key={job._id} {...job} />;
+				})}
+			</div>
+			{numOfPages > 1 && <PageBtnContainer/>}
+		</Wrapper>
+	);
 };
 
 export default JobsContainer;
@@ -5884,56 +6147,62 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const PageBtnContainer = () => {
-  const {
-    data: { numOfPages, currentPage },
-  } = useAllJobsContext();
-  const { search, pathname } = useLocation();
-  const navigate = useNavigate();
-  const pages = Array.from({ length: numOfPages }, (_, index) => index + 1);
-
-  const handlePageChange = (pageNumber) => {
-    const searchParams = new URLSearchParams(search);
-    searchParams.set('page', pageNumber);
-    navigate(`${pathname}?${searchParams.toString()}`);
-  };
-
-  return (
-    <Wrapper>
-      <button
-        className='btn prev-btn'
-        onClick={() => {
-          let prevPage = currentPage - 1;
-          if (prevPage < 1) prevPage = numOfPages;
-          handlePageChange(prevPage);
-        }}
-      >
-        <HiChevronDoubleLeft />
-        prev
-      </button>
-      <div className='btn-container'>
-        {pages.map((pageNumber) => (
-          <button
-            className={`btn page-btn ${pageNumber === currentPage && 'active'}`}
-            key={pageNumber}
-            onClick={() => handlePageChange(pageNumber)}
-          >
-            {pageNumber}
-          </button>
-        ))}
-      </div>
-      <button
-        className='btn next-btn'
-        onClick={() => {
-          let nextPage = currentPage + 1;
-          if (nextPage > numOfPages) nextPage = 1;
-          handlePageChange(nextPage);
-        }}
-      >
-        next
-        <HiChevronDoubleRight />
-      </button>
-    </Wrapper>
-  );
+	const {
+		data: {
+			numOfPages,
+			currentPage
+		},
+	} = useAllJobsContext();
+	const {
+		search,
+		pathname
+	} = useLocation();
+	const navigate = useNavigate();
+	const pages = Array.from({ length: numOfPages }, (_, index) => index + 1);
+	
+	const handlePageChange = (pageNumber) => {
+		const searchParams = new URLSearchParams(search);
+		searchParams.set('page', pageNumber);
+		navigate(`${pathname}?${searchParams.toString()}`);
+	};
+	
+	return (
+		<Wrapper>
+			<button
+				className='btn prev-btn'
+				onClick={() => {
+					let prevPage = currentPage - 1;
+					if (prevPage < 1) prevPage = numOfPages;
+					handlePageChange(prevPage);
+				}}
+			>
+				<HiChevronDoubleLeft/>
+				prev
+			</button>
+			<div className='btn-container'>
+				{pages.map((pageNumber) => (
+					<button
+						className={`btn page-btn ${pageNumber === currentPage && 'active'}`}
+						key={pageNumber}
+						onClick={() => handlePageChange(pageNumber)}
+					>
+						{pageNumber}
+					</button>
+				))}
+			</div>
+			<button
+				className='btn next-btn'
+				onClick={() => {
+					let nextPage = currentPage + 1;
+					if (nextPage > numOfPages) nextPage = 1;
+					handlePageChange(nextPage);
+				}}
+			>
+				next
+				<HiChevronDoubleRight/>
+			</button>
+		</Wrapper>
+	);
 };
 
 export default PageBtnContainer;
@@ -5948,111 +6217,132 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 const PageBtnContainer = () => {
-  const {
-    data: { numOfPages, currentPage },
-  } = useAllJobsContext();
-  const { search, pathname } = useLocation();
-  const navigate = useNavigate();
-
-  const handlePageChange = (pageNumber) => {
-    const searchParams = new URLSearchParams(search);
-    searchParams.set('page', pageNumber);
-    navigate(`${pathname}?${searchParams.toString()}`);
-  };
-
-  const addPageButton = ({ pageNumber, activeClass }) => {
-    return (
-      <button
-        className={`btn page-btn ${activeClass && 'active'}`}
-        key={pageNumber}
-        onClick={() => handlePageChange(pageNumber)}
-      >
-        {pageNumber}
-      </button>
-    );
-  };
-
-  const renderPageButtons = () => {
-    const pageButtons = [];
-
-    // Add the first page button
-    pageButtons.push(
-      addPageButton({ pageNumber: 1, activeClass: currentPage === 1 })
-    );
-    // Add the dots before the current page if there are more than 3 pages
-    if (currentPage > 3) {
-      pageButtons.push(
-        <span className='page-btn dots' key='dots-1'>
-          ....
-        </span>
-      );
-    }
-    // one before current page
-    if (currentPage !== 1 && currentPage !== 2) {
-      pageButtons.push(
-        addPageButton({ pageNumber: currentPage - 1, activeClass: false })
-      );
-    }
-
-    // Add the current page button
-    if (currentPage !== 1 && currentPage !== numOfPages) {
-      pageButtons.push(
-        addPageButton({ pageNumber: currentPage, activeClass: true })
-      );
-    }
-
-    // one after current page
-    if (currentPage !== numOfPages && currentPage !== numOfPages - 1) {
-      pageButtons.push(
-        addPageButton({ pageNumber: currentPage + 1, activeClass: false })
-      );
-    }
-    if (currentPage < numOfPages - 2) {
-      pageButtons.push(
-        <span className=' page-btn dots' key='dots+1'>
-          ....
-        </span>
-      );
-    }
-
-    // Add the last page button
-    pageButtons.push(
-      addPageButton({
-        pageNumber: numOfPages,
-        activeClass: currentPage === numOfPages,
-      })
-    );
-
-    return pageButtons;
-  };
-
-  return (
-    <Wrapper>
-      <button
-        className='prev-btn'
-        onClick={() => {
-          let prevPage = currentPage - 1;
-          if (prevPage < 1) prevPage = numOfPages;
-          handlePageChange(prevPage);
-        }}
-      >
-        <HiChevronDoubleLeft />
-        prev
-      </button>
-      <div className='btn-container'>{renderPageButtons()}</div>
-      <button
-        className='btn next-btn'
-        onClick={() => {
-          let nextPage = currentPage + 1;
-          if (nextPage > numOfPages) nextPage = 1;
-          handlePageChange(nextPage);
-        }}
-      >
-        next
-        <HiChevronDoubleRight />
-      </button>
-    </Wrapper>
-  );
+	const {
+		data: {
+			numOfPages,
+			currentPage
+		},
+	} = useAllJobsContext();
+	const {
+		search,
+		pathname
+	} = useLocation();
+	const navigate = useNavigate();
+	
+	const handlePageChange = (pageNumber) => {
+		const searchParams = new URLSearchParams(search);
+		searchParams.set('page', pageNumber);
+		navigate(`${pathname}?${searchParams.toString()}`);
+	};
+	
+	const addPageButton = ({
+		pageNumber,
+		activeClass
+	}) => {
+		return (
+			<button
+				className={`btn page-btn ${activeClass && 'active'}`}
+				key={pageNumber}
+				onClick={() => handlePageChange(pageNumber)}
+			>
+				{pageNumber}
+			</button>
+		);
+	};
+	
+	const renderPageButtons = () => {
+		const pageButtons = [];
+		
+		// Add the first page button
+		pageButtons.push(
+			addPageButton({
+				pageNumber: 1,
+				activeClass: currentPage === 1
+			})
+		);
+		// Add the dots before the current page if there are more than 3 pages
+		if (currentPage > 3) {
+			pageButtons.push(
+				<span className='page-btn dots' key='dots-1'>
+					....
+				</span>
+			);
+		}
+		// one before current page
+		if (currentPage !== 1 && currentPage !== 2) {
+			pageButtons.push(
+				addPageButton({
+					pageNumber: currentPage - 1,
+					activeClass: false
+				})
+			);
+		}
+		
+		// Add the current page button
+		if (currentPage !== 1 && currentPage !== numOfPages) {
+			pageButtons.push(
+				addPageButton({
+					pageNumber: currentPage,
+					activeClass: true
+				})
+			);
+		}
+		
+		// one after current page
+		if (currentPage !== numOfPages && currentPage !== numOfPages - 1) {
+			pageButtons.push(
+				addPageButton({
+					pageNumber: currentPage + 1,
+					activeClass: false
+				})
+			);
+		}
+		if (currentPage < numOfPages - 2) {
+			pageButtons.push(
+				<span className=' page-btn dots' key='dots+1'>
+					....
+				</span>
+			);
+		}
+		
+		// Add the last page button
+		pageButtons.push(
+			addPageButton({
+				pageNumber: numOfPages,
+				activeClass: currentPage === numOfPages,
+			})
+		);
+		
+		return pageButtons;
+	};
+	
+	return (
+		<Wrapper>
+			<button
+				className='prev-btn'
+				onClick={() => {
+					let prevPage = currentPage - 1;
+					if (prevPage < 1) prevPage = numOfPages;
+					handlePageChange(prevPage);
+				}}
+			>
+				<HiChevronDoubleLeft/>
+				prev
+			</button>
+			<div className='btn-container'>{renderPageButtons()}</div>
+			<button
+				className='btn next-btn'
+				onClick={() => {
+					let nextPage = currentPage + 1;
+					if (nextPage > numOfPages) nextPage = 1;
+					handlePageChange(nextPage);
+				}}
+			>
+				next
+				<HiChevronDoubleRight/>
+			</button>
+		</Wrapper>
+	);
 };
 
 export default PageBtnContainer;
@@ -6135,14 +6425,14 @@ cd client && npm run build
 
 - copy/paste all the files/folders
 
-  - from client/dist
-  - to server(root)/public
+    - from client/dist
+    - to server(root)/public
 
 - in server.js point to index.html
 
 ```js
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+	res.sendFile(path.resolve(__dirname, './public', 'index.html'));
 });
 ```
 
@@ -6161,9 +6451,14 @@ app.get('*', (req, res) => {
 package.json
 
 ```js
- "scripts": {
-    "setup-production-app": "npm i && cd client && npm i && npm run build",
-  },
+ "scripts"
+:
+{
+	"setup-production-app"
+:
+	"npm i && cd client && npm i && npm run build",
+}
+,
 ```
 
 server.js
@@ -6172,7 +6467,7 @@ server.js
 app.use(express.static(path.resolve(__dirname, './client/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
+	res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
 ```
 
@@ -6265,24 +6560,28 @@ import { useNavigation } from 'react-router-dom';
 import { Loading } from '../components';
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
-  const navigation = useNavigation();
-  const isPageLoading = navigation.state === 'loading';
-
-  return (
-    <Wrapper>
-      ...
-      <div className='dashboard-page'>
-        {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
-      </div>
-      ...
-    </Wrapper>
-  );
+	const navigation = useNavigation();
+	const isPageLoading = navigation.state === 'loading';
+	
+	return (
+		<Wrapper>
+			...
+			<div className='dashboard-page'>
+				{isPageLoading ? <Loading/> : <Outlet context={{ user }}/>}
+			</div>
+			...
+		</Wrapper>
+	);
 };
 ```
 
 #### React Query
 
-React Query is a powerful library that simplifies data fetching, caching, and synchronization in React applications. It provides a declarative and intuitive way to manage remote data by abstracting away the complex logic of fetching and caching data from APIs. React Query offers features like automatic background data refetching, optimistic updates, pagination support, and more, making it easier to build performant and responsive applications that rely on fetching and manipulating data.
+React Query is a powerful library that simplifies data fetching, caching, and synchronization in React applications. It
+provides a declarative and intuitive way to manage remote data by abstracting away the complex logic of fetching and
+caching data from APIs. React Query offers features like automatic background data refetching, optimistic updates,
+pagination support, and more, making it easier to build performant and responsive applications that rely on fetching and
+manipulating data.
 
 [React Query Docs](https://tanstack.com/query/v4/docs/react/overview)
 
@@ -6299,20 +6598,20 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 5,
-    },
-  },
+	defaultOptions: {
+		queries: {
+			staleTime: 1000 * 60 * 5,
+		},
+	},
 });
 
 const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-  );
+	return (
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router}/>
+			<ReactQueryDevtools initialIsOpen={false}/>
+		</QueryClientProvider>
+	);
 };
 ```
 
@@ -6405,13 +6704,20 @@ const data = useQuery({
 });
 ```
 
-const data = useQuery({ ... });: This line declares a constant variable named data and assigns it the result of the useQuery hook. The useQuery hook is provided by React Query and is used to perform data fetching.
+const data = useQuery({ ... });: This line declares a constant variable named data and assigns it the result of the
+useQuery hook. The useQuery hook is provided by React Query and is used to perform data fetching.
 
-queryKey: ['stats'],: The queryKey property is an array that serves as a unique identifier for the query. In this case, the query key is set to ['stats'], indicating that this query is fetching statistics related to jobs.
+queryKey: ['stats'],: The queryKey property is an array that serves as a unique identifier for the query. In this case,
+the query key is set to ['stats'], indicating that this query is fetching statistics related to jobs.
 
-queryFn: () => customFetch.get('/jobs/stats'),: The queryFn property specifies the function that will be executed when the query is triggered. In this case, it uses an arrow function that calls customFetch.get('/jobs/stats'). The customFetch object is likely a custom wrapper around the fetch function or an external HTTP client library, used to make the actual API request to retrieve job statistics.In React Query, the queryFn property expects a function that returns a promise. The promise should resolve with the data you want to fetch and store in the query cache.
+queryFn: () => customFetch.get('/jobs/stats'),: The queryFn property specifies the function that will be executed when
+the query is triggered. In this case, it uses an arrow function that calls customFetch.get('/jobs/stats'). The
+customFetch object is likely a custom wrapper around the fetch function or an external HTTP client library, used to make
+the actual API request to retrieve job statistics.In React Query, the queryFn property expects a function that returns a
+promise. The promise should resolve with the data you want to fetch and store in the query cache.
 
-customFetch.get('/jobs/stats'): This line is making an HTTP GET request to the /jobs/stats endpoint, which is the API route that provides the job statistics data.
+customFetch.get('/jobs/stats'): This line is making an HTTP GET request to the /jobs/stats endpoint, which is the API
+route that provides the job statistics data.
 
 #### Get Stats with React Query
 
@@ -6591,48 +6897,58 @@ import customFetch from '../utils/customFetch';
 import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
+
 const AllJobsContext = createContext();
 
 const allJobsQuery = (params) => {
-  const { search, jobStatus, jobType, sort, page } = params;
-  return {
-    queryKey: [
-      'jobs',
-      search ?? '',
-      jobStatus ?? 'all',
-      jobType ?? 'all',
-      sort ?? 'newest',
-      page ?? 1,
-    ],
-    queryFn: async () => {
-      const { data } = await customFetch.get('/jobs', {
-        params,
-      });
-      return data;
-    },
-  };
+	const {
+		search,
+		jobStatus,
+		jobType,
+		sort,
+		page
+	} = params;
+	return {
+		queryKey: [
+			'jobs',
+			search ?? '',
+			jobStatus ?? 'all',
+			jobType ?? 'all',
+			sort ?? 'newest',
+			page ?? 1,
+		],
+		queryFn: async () => {
+			const { data } = await customFetch.get('/jobs', {
+				params,
+			});
+			return data;
+		},
+	};
 };
 
 export const loader =
-  (queryClient) =>
-  async ({ request }) => {
-    const params = Object.fromEntries([
-      ...new URL(request.url).searchParams.entries(),
-    ]);
-
-    await queryClient.ensureQueryData(allJobsQuery(params));
-    return { searchValues: { ...params } };
-  };
+	(queryClient) =>
+		async ({ request }) => {
+			const params = Object.fromEntries([
+				...new URL(request.url).searchParams.entries(),
+			]);
+			
+			await queryClient.ensureQueryData(allJobsQuery(params));
+			return { searchValues: { ...params } };
+		};
 
 const AllJobs = () => {
-  const { searchValues } = useLoaderData();
-  const { data } = useQuery(allJobsQuery(searchValues));
-  return (
-    <AllJobsContext.Provider value={{ data, searchValues }}>
-      <SearchContainer />
-      <JobsContainer />
-    </AllJobsContext.Provider>
-  );
+	const { searchValues } = useLoaderData();
+	const { data } = useQuery(allJobsQuery(searchValues));
+	return (
+		<AllJobsContext.Provider value={{
+			data,
+			searchValues
+		}}>
+			<SearchContainer/>
+			<JobsContainer/>
+		</AllJobsContext.Provider>
+	);
 };
 export default AllJobs;
 
@@ -6798,32 +7114,32 @@ DashboardLayout.jsx
 const DashboardContext = createContext();
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
-  const [isAuthError, setIsAuthError] = useState(false);
-
-  const logoutUser = async () => {
-    await customFetch.get('/auth/logout');
-    toast.success('Logging out...');
-    navigate('/');
-  };
-
-  customFetch.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error) => {
-      if (error?.response?.status === 401) {
-        setIsAuthError(true);
-      }
-      return Promise.reject(error);
-    }
-  );
-  useEffect(() => {
-    if (!isAuthError) return;
-    logoutUser();
-  }, [isAuthError]);
-  return (
-    ...
-  )
+	const [isAuthError, setIsAuthError] = useState(false);
+	
+	const logoutUser = async () => {
+		await customFetch.get('/auth/logout');
+		toast.success('Logging out...');
+		navigate('/');
+	};
+	
+	customFetch.interceptors.response.use(
+		(response) => {
+			return response;
+		},
+		(error) => {
+			if (error?.response?.status === 401) {
+				setIsAuthError(true);
+			}
+			return Promise.reject(error);
+		}
+	);
+	useEffect(() => {
+		if (!isAuthError) return;
+		logoutUser();
+	}, [isAuthError]);
+	return (
+...
+)
 };
 
 ```
@@ -6836,16 +7152,23 @@ npm install helmet express-mongo-sanitize express-rate-limit
 ```
 
 Package: helmet
-Description: helmet is a security package for Express.js applications that helps protect them by setting various HTTP headers to enhance security, prevent common web vulnerabilities, and improve overall application security posture.
-Need: The package is needed to safeguard web applications from potential security threats, such as cross-site scripting (XSS) attacks, clickjacking, and other security exploits.
+Description: helmet is a security package for Express.js applications that helps protect them by setting various HTTP
+headers to enhance security, prevent common web vulnerabilities, and improve overall application security posture.
+Need: The package is needed to safeguard web applications from potential security threats, such as cross-site
+scripting (XSS) attacks, clickjacking, and other security exploits.
 
 Package: express-mongo-sanitize
-Description: express-mongo-sanitize is a middleware for Express.js that sanitizes user-supplied data coming from request parameters, body, and query strings to prevent potential NoSQL injection attacks on MongoDB databases.
-Need: The package addresses the need to protect MongoDB databases from malicious attempts to manipulate data and helps ensure the integrity of data storage and retrieval.
+Description: express-mongo-sanitize is a middleware for Express.js that sanitizes user-supplied data coming from request
+parameters, body, and query strings to prevent potential NoSQL injection attacks on MongoDB databases.
+Need: The package addresses the need to protect MongoDB databases from malicious attempts to manipulate data and helps
+ensure the integrity of data storage and retrieval.
 
 Package: express-rate-limit
-Description: express-rate-limit is an Express.js middleware that helps control and limit the rate of incoming requests from a specific IP address or a set of IP addresses to protect the server from abuse, brute-force attacks, and potential denial-of-service (DoS) attacks.
-Need: This package is necessary to manage and regulate the number of requests made to the server within a given time frame, preventing excessive usage and improving the overall stability and performance of the application.
+Description: express-rate-limit is an Express.js middleware that helps control and limit the rate of incoming requests
+from a specific IP address or a set of IP addresses to protect the server from abuse, brute-force attacks, and potential
+denial-of-service (DoS) attacks.
+Need: This package is necessary to manage and regulate the number of requests made to the server within a given time
+frame, preventing excessive usage and improving the overall stability and performance of the application.
 
 server.js
 
