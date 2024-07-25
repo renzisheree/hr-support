@@ -6,14 +6,14 @@ import { BigSideBar, Navbar, SmallSideBar } from '../components'
 const DashboardContext = createContext(null)
 const DashboardLayout = () => {
 	const user = { name: 'john' }
-	const [showSideBar, setShowSideBar] = useState(false)
+	const [showSidebar, setShowSidebar] = useState(false)
 	const [isDarkTheme, setIsDarkTheme] = useState(false)
 	const toggleDarkTheme = () => {
 		console.log('toggle dark theme')
 	}
 	const toggleSidebar = () => {
-		console.log(showSideBar)
-		setShowSideBar(!showSideBar)
+		console.log(showSidebar)
+		setShowSidebar(!showSidebar)
 	}
 	const logoutUser = async () => {
 		console.log('Logout user')
@@ -21,7 +21,7 @@ const DashboardLayout = () => {
 	return (
 		<DashboardContext.Provider value={{
 			user,
-			showSideBar,
+			showSidebar,
 			isDarkTheme,
 			toggleDarkTheme,
 			toggleSidebar,

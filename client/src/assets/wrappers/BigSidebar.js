@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 const Wrapper = styled.aside`
     display: none;
-    @media (min-width: 992px) {
+    @media ( min-width: 992px) {
         display: block;
-        box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1);
         .sidebar-container {
             background: var(--background-secondary-color);
             min-height: 100vh;
@@ -17,6 +17,7 @@ const Wrapper = styled.aside`
         .content {
             position: sticky;
             top: 0;
+
         }
 
         .show-sidebar {
@@ -47,7 +48,7 @@ const Wrapper = styled.aside`
 
         .nav-link:hover {
             padding-left: 3rem;
-            color: var(--primary-500);
+            color: var(--primary-300);
             transition: var(--transition);
         }
 
@@ -62,9 +63,7 @@ const Wrapper = styled.aside`
             color: var(--primary-500);
         }
 
-        .pending {
-            background: var(--background-color);
-        }
+
     }
 `
 export default Wrapper

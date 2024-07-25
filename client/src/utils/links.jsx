@@ -1,18 +1,25 @@
 import { FaWpforms } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im'
 import { MdAdminPanelSettings, MdQueryStats } from 'react-icons/md'
+import { IoMdStats } from 'react-icons/io'
 
 const links = [
 	{
 		text: 'add job',
-		path: '/',
+		path: '.',
 		icon: <FaWpforms/>
+		
+	},
+	{
+		text: 'all job',
+		path: 'all-jobs',
+		icon: <MdQueryStats/>
 		
 	},
 	{
 		text: 'stats',
 		path: 'stats',
-		icon: <MdQueryStats/>
+		icon: <IoMdStats/>
 	},
 	{
 		text: 'profile',
@@ -26,3 +33,4 @@ const links = [
 		
 	}
 ]
+export default links
