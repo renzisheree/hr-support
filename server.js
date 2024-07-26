@@ -62,10 +62,52 @@ app.post('/api/v1/jobs', (req, res) => {
 		company,
 		position
 	}
-	jobs.push()
+	jobs.push(job)
+	res.status(201)
+	.json({
+		success: true,
+		data: job
+	})
+})
+
+app.get('/api/v1/jobs/:id', (req, res) => {
+	const { id } = req.params
+	const job = jobs.find((job) => job.id === id)
+	
+	if (!job) {
+		return res.status(404)
+		.json({
+			success: false,
+			msg: `no job was found with ${id}`,
+		})
+	}
+	
+	res.status(200)
+	.json(job)
+})
+
+app.patch('/api/v1/jobs/:id', (req, res) => {
+	const { id } = req.params
+	const {
+		company,
+		position
+	} = req.body
+	
+	const job = jobs.find((job) => job.id === id)
+	
+	if (!job) {
+		return res.status(404)
+		.json({
+			success: false,
+			msg: `no job was found with ${id}`,
+		})
+	}
+	job.company = company
+	job.position = position
 	res.status(200)
 	.json({
 		success: true,
+		msg: 'Job modified',
 		data: job
 	})
 })
