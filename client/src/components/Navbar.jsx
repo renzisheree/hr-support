@@ -3,6 +3,7 @@ import Wrapper from '../assets/wrappers/Navbar.js'
 import { MdMenuOpen } from 'react-icons/md'
 import Logo from './Logo.jsx'
 import { useDashboardContext } from '../pages/DashboardLayout.jsx'
+import { LogoutContainer, ThemeToggle } from './index.js'
 
 const Navbar = () => {
 	const { toggleSidebar } = useDashboardContext()
@@ -16,7 +17,9 @@ const Navbar = () => {
 					<Logo/>
 					<h4 className="logo-text">Dashboard</h4>
 				</div>
-				<div className="btn-container">Toggle/Logout</div>
+				<div className="btn-container">
+					<ThemeToggle/>
+					<LogoutContainer/></div>
 			
 			</div>
 		</Wrapper>
