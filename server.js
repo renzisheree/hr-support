@@ -1,11 +1,11 @@
 import * as dotenv from 'dotenv'
-
-dotenv.config()
 import express from 'express'
-
-const app = express()
 import morgan from 'morgan'
 import { nanoid } from 'nanoid'
+
+dotenv.config()
+
+const app = express()
 
 let jobs = [
 	{
@@ -92,7 +92,13 @@ app.patch('/api/v1/jobs/:id', (req, res) => {
 		company,
 		position
 	} = req.body
-	
+	if (!company || !position) {
+		return res.status(400)
+		.json({
+			success: false,
+			msg: 'Please provide company and position'
+		})
+	}
 	const job = jobs.find((job) => job.id === id)
 	
 	if (!job) {
@@ -112,6 +118,25 @@ app.patch('/api/v1/jobs/:id', (req, res) => {
 	})
 })
 
+app.delete('/api/v1/jobs/:id', (req, res) => {
+	const { id } = req.params
+	const job = jobs.find((job) => job.id === id)
+	
+	if (!job) {
+		return res.status(404)
+		.json({
+			success: false,
+			msg: `no job was found with ${id}`,
+		})
+	}
+	jobs = jobs.filter((job) => job.id !== id)
+	res.status(200)
+	.json({
+		success: true,
+		msg: 'Job deleted',
+		data: jobs
+	})
+})
 const port = process.env.PORT || 5100
 app.listen(port, () => {
 	console.log('Server running on port ' + port)
