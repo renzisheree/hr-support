@@ -1,20 +1,16 @@
-import { nanoid } from 'nanoid'
 import JobModel from '../models/job.model.js'
-import jobModel from '../models/job.model.js'
+import { StatusCodes } from 'http-status-codes'
+import { NotFoundError } from '../errors/customErrors.js'
 
 export const getJob = async (req, res) => {
 	const { id } = req.params
 	const job = await JobModel.findById(id)
 	
 	if (!job) {
-		return res.status(404)
-		.json({
-			success: false,
-			msg: `no job was found with ${id}`,
-		})
+		throw new NotFoundError(`no job was found with ${id}`)
 	}
 	
-	res.status(200)
+	res.status(StatusCodes.OK)
 	.json(
 		{
 			success: true,
@@ -25,7 +21,7 @@ export const getJob = async (req, res) => {
 
 export const getJobs = async (req, res) => {
 	const jobs = await JobModel.find({})
-	res.status(200)
+	res.status(StatusCodes.OK)
 	.json({
 		success: true,
 		data: jobs
@@ -33,8 +29,8 @@ export const getJobs = async (req, res) => {
 }
 export const createJob = async (req, res) => {
 	
-	const job = await jobModel.create(req.body)
-	res.status(201)
+	const job = await JobModel.create(req.body)
+	res.status(StatusCodes.CREATED)
 	.json({
 		success: true,
 		data: job
@@ -45,13 +41,9 @@ export const updateJob = async (req, res) => {
 	const { id } = req.params
 	const updatedJob = await JobModel.findByIdAndUpdate(id, req.body, { new: true })
 	if (!updatedJob) {
-		return res.status(400)
-		.json({
-			success: false,
-			msg: `no job was found with ${id}`,
-		})
+		throw new NotFoundError(`no job was found with ${id}`)
 	}
-	res.status(200)
+	res.status(StatusCodes.OK)
 	.json({
 		success: true,
 		msg: 'Job modified',
@@ -64,14 +56,10 @@ export const deleteJob = async (req, res) => {
 	const job = await JobModel.findByIdAndDelete(id)
 	
 	if (!job) {
-		return res.status(404)
-		.json({
-			success: false,
-			msg: `no job was found with ${id}`,
-		})
+		throw new NotFoundError(`no job was found with ${id}`)
 	}
 	
-	res.status(200)
+	res.status(StatusCodes.OK)
 	.json({
 		success: true,
 		msg: 'Job deleted',
