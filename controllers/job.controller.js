@@ -1,20 +1,10 @@
 import { nanoid } from 'nanoid'
+import JobModel from '../models/job.model.js'
+import jobModel from '../models/job.model.js'
 
-let jobs = [
-	{
-		id: nanoid(),
-		company: 'apple ',
-		position: 'Frontend'
-	},
-	{
-		id: nanoid(),
-		company: 'Google',
-		position: 'Backend'
-	}
-]
-export const getJob = (req, res) => {
+export const getJob = async (req, res) => {
 	const { id } = req.params
-	const job = jobs.find((job) => job.id === id)
+	const job = await JobModel.findById(id)
 	
 	if (!job) {
 		return res.status(404)
@@ -25,34 +15,25 @@ export const getJob = (req, res) => {
 	}
 	
 	res.status(200)
-	.json(job)
+	.json(
+		{
+			success: true,
+			data: job
+		}
+	)
 }
 
-export const getJobs = (req, res) => {
+export const getJobs = async (req, res) => {
+	const jobs = await JobModel.find({})
 	res.status(200)
 	.json({
 		success: true,
 		data: jobs
 	})
 }
-export const createJob = (req, res) => {
-	const {
-		company,
-		position
-	} = req.body
-	console.log(company, position)
-	if (!company || !position) {
-		res.status(400)
-		.json({ msg: 'please provide company and position' })
-		return
-	}
-	const id = nanoid(10)
-	const job = {
-		id,
-		company,
-		position
-	}
-	jobs.push(job)
+export const createJob = async (req, res) => {
+	
+	const job = await jobModel.create(req.body)
 	res.status(201)
 	.json({
 		success: true,
@@ -60,41 +41,27 @@ export const createJob = (req, res) => {
 	})
 }
 
-export const updateJob = (req, res) => {
+export const updateJob = async (req, res) => {
 	const { id } = req.params
-	const {
-		company,
-		position
-	} = req.body
-	if (!company || !position) {
+	const updatedJob = await JobModel.findByIdAndUpdate(id, req.body, { new: true })
+	if (!updatedJob) {
 		return res.status(400)
-		.json({
-			success: false,
-			msg: 'Please provide company and position'
-		})
-	}
-	const job = jobs.find((job) => job.id === id)
-	
-	if (!job) {
-		return res.status(404)
 		.json({
 			success: false,
 			msg: `no job was found with ${id}`,
 		})
 	}
-	job.company = company
-	job.position = position
 	res.status(200)
 	.json({
 		success: true,
 		msg: 'Job modified',
-		data: job
+		data: updatedJob
 	})
 }
 
-export const deleteJob = (req, res) => {
+export const deleteJob = async (req, res) => {
 	const { id } = req.params
-	const job = jobs.find((job) => job.id === id)
+	const job = await JobModel.findByIdAndDelete(id)
 	
 	if (!job) {
 		return res.status(404)
@@ -103,11 +70,11 @@ export const deleteJob = (req, res) => {
 			msg: `no job was found with ${id}`,
 		})
 	}
-	jobs = jobs.filter((job) => job.id !== id)
+	
 	res.status(200)
 	.json({
 		success: true,
 		msg: 'Job deleted',
-		data: jobs
+		data: {}
 	})
 }
