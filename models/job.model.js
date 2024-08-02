@@ -1,30 +1,25 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
+import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
+const JobSchema = new mongoose.Schema(
+  {
+    company: String,
+    position: String,
+    jobStatus: {
+      type: String,
+      enum: Object.values(JOB_STATUS),
+      default: JOB_STATUS.PENDING,
+    },
+    jobType: {
+      type: String,
+      enum: Object.values(JOB_TYPE),
+      default: JOB_TYPE.FULL_TIME,
+    },
+    JobLocation: {
+      type: String,
+      default: "Thành phố...",
+    },
+  },
+  { timestamps: true }
+);
 
-const JobSchema = new mongoose.Schema({
-	company: String,
-	position: String,
-	jobStatus: {
-		type: String,
-		enum: [
-			'Phỏng vấn',
-			'Từ chối',
-			'Chờ'
-		],
-		default: 'Chờ'
-	},
-	jobType: {
-		type: String,
-		enum: [
-			'Toàn thời gian',
-			'Bán thời gian',
-			'Thực tập'
-		],
-		default: 'Toàn thời gian'
-	},
-	JobLocation: {
-		type: String,
-		default: 'Thành phố...'
-	}
-}, { timestamps: true })
-
-export default mongoose.model('Job', JobSchema)
+export default mongoose.model("Job", JobSchema);
