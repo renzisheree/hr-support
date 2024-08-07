@@ -10,9 +10,9 @@ dotenv.config();
 const app = express();
 
 import jobRouter from "./routes/job.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 //middleware
-import ErrorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 
 if (process.env.NODE_ENV === "development") {
@@ -33,6 +33,7 @@ app.post("/", (req, res, next) => {
 });
 
 app.use("/api/v1/jobs", jobRouter);
+app.use("/api/v1/auth", userRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({
