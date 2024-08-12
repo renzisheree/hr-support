@@ -8,9 +8,9 @@ dotenv.config();
 
 const app = express();
 
-import jobRouter from "./routes/job.routes.js";
-import userRouter from "./routes/user.routes.js";
-
+import jobRoutes from "./routes/job.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
 //middleware
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
@@ -34,8 +34,9 @@ app.post("/", (req, res, next) => {
   });
 });
 
-app.use("/api/v1/jobs", authenticateUser, jobRouter);
-app.use("/api/v1/auth", userRouter);
+app.use("/api/v1/jobs", authenticateUser, jobRoutes);
+app.use("/api/v1/user", authenticateUser, userRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 app.use("*", (req, res) => {
   res.status(404).json({
