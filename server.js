@@ -3,8 +3,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import mongoose from "mongoose";
-import { body, validationResult } from "express-validator";
-
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
@@ -14,6 +13,7 @@ import userRouter from "./routes/user.routes.js";
 
 //middleware
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
+import { authenticateUser } from "./middleware/authMiddleware.js";
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
   res.send("hello ");
 });
@@ -32,7 +34,7 @@ app.post("/", (req, res, next) => {
   });
 });
 
-app.use("/api/v1/jobs", jobRouter);
+app.use("/api/v1/jobs", authenticateUser, jobRouter);
 app.use("/api/v1/auth", userRouter);
 
 app.use("*", (req, res) => {

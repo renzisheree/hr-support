@@ -11,13 +11,14 @@ export const getJob = async (req, res) => {
 };
 
 export const getJobs = async (req, res) => {
-  const jobs = await JobModel.find({});
+  const jobs = await JobModel.find({ createdBy: req.user.userId });
   res.status(StatusCodes.OK).json({
     success: true,
     data: jobs,
   });
 };
 export const createJob = async (req, res) => {
+  req.body.createdBy = req.user.userId;
   const job = await JobModel.create(req.body);
   res.status(StatusCodes.CREATED).json({
     success: true,
