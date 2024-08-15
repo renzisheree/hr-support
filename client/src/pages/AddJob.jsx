@@ -38,7 +38,7 @@ const AddJob = () => {
           <FormRow type="text" name="company" labelText="Công ty" />{" "}
           <FormRow
             type="text"
-            name="jobLocation"
+            name="JobLocation"
             defaultValue={data.location}
             labelText="Nơi làm việc"
           />
