@@ -1,11 +1,8 @@
-import React from 'react';
+import { useOutletContext } from "react-router-dom";
 
 const AddJob = () => {
-    return (
-        <h1>
-            ADD JOB
-        </h1>
-    );
+  const data = useOutletContext();
+  return <h1>ADD JOB</h1>;
 };
 
 export default AddJob;
