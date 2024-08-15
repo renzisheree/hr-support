@@ -15,7 +15,10 @@ import {
 
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
+import { action as addJobAction } from "./pages/AddJob";
+
 import { loader as loaderDashboard } from "./pages/DashboardLayout";
+
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("dark-theme") === "true";
   document.body.classList.toggle("dark-theme", isDarkTheme);
@@ -54,6 +57,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
+            action: addJobAction,
             element: <AddJob />,
           },
           {
