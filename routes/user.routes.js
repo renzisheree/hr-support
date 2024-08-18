@@ -8,6 +8,7 @@ import {
 } from "../controllers/user.controller.js";
 import {
   authenticateUser,
+  checkForTestUser,
   authorizePermissions,
 } from "../middleware/authMiddleware.js";
 import { validateUpdateInput } from "../middleware/validationMiddleware.js";
@@ -20,6 +21,7 @@ router.get("/admin/app-stats", [
 router.patch(
   "/update-user",
   upload.single("avatar"),
+  checkForTestUser,
   validateUpdateInput,
   updateUser
 );

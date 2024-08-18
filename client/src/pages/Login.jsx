@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import customFetch from "../../utils/customeFetch.js";
 import Wrapper from "../assets/wrappers/RegisterAndLoginPage.js";
 import { FormRow, Logo, SubmitBtn } from "../components";
-import { Form, Link, redirect } from "react-router-dom";
+import { Form, Link, redirect, useNavigate } from "react-router-dom";
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
@@ -15,6 +15,18 @@ export const action = async ({ request }) => {
   }
 };
 const Login = () => {
+  const navigate = useNavigate();
+  const loginUserDemo = async () => {
+    const data1 = { email: "test@test.com", password: "secret123" };
+    try {
+      await customFetch.post("/auth/login", data1);
+      toast.success("Dạo một vòng nào");
+      navigate("/dashboard");
+      return null;
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+    }
+  };
   return (
     <Wrapper>
       <Form method="post" className="form">
@@ -24,8 +36,8 @@ const Login = () => {
         <FormRow type="password" name="password" labelText="Mật khẩu" />
         <SubmitBtn />
 
-        <button type="submit" className="btn btn-block">
-          Tìm hiểu thêm...
+        <button type="button" onClick={loginUserDemo} className="btn btn-block">
+          Dùng thử...
         </button>
         <p>
           Chưa có tài khoản?

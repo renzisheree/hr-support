@@ -56,7 +56,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("*", (req, res) => {
   res.status(404).json({
     success: false,
-    msg: "Not found",
+    msg: "Not found1",
   });
 });
 app.use(errorHandlerMiddleware);
