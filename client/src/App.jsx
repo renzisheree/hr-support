@@ -20,11 +20,12 @@ import { action as loginAction } from "./pages/Login";
 import { action as addJobAction } from "./pages/AddJob";
 import { action as actionEditJob } from "./pages/EditJob";
 import { action as actionDeleteJob } from "./pages/DeleteJob";
+import { action as actionProfile } from "./pages/Profile";
 //loader
 import { loader as loaderDashboard } from "./pages/DashboardLayout";
 import { loader as loaderAllJobs } from "./pages/AllJobs";
 import { loader as loaderEditJob } from "./pages/EditJob";
-
+import { loader as loaderAdmin } from "./pages/Admin";
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("dark-theme") === "true";
   document.body.classList.toggle("dark-theme", isDarkTheme);
@@ -77,10 +78,12 @@ const router = createBrowserRouter([
           },
           {
             path: "profile",
+            action: actionProfile,
             element: <Profile />,
           },
           {
             path: "admin",
+            loader: loaderAdmin,
             element: <Admin />,
           },
           {
