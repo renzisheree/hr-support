@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import upload from "../middleware/multerMiddleware.js";
 const router = Router();
 import {
   getApplicationStats,
@@ -17,5 +17,10 @@ router.get("/admin/app-stats", [
   authorizePermissions("admin"),
   getApplicationStats,
 ]);
-router.patch("/update-user", validateUpdateInput, updateUser);
+router.patch(
+  "/update-user",
+  upload.single("avatar"),
+  validateUpdateInput,
+  updateUser
+);
 export default router;
