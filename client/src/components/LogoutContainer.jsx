@@ -16,9 +16,12 @@ const LogoutContainer = () => {
           setShowLogout(!showLogout);
         }}
       >
-        <FaUserCircle />
+        {data.avatar ? (
+          <img src={data.avatar} alt="avatar" className="img" />
+        ) : (
+          <FaUserCircle />
+        )}
         {data?.lastName}
-
         <FaCaretDown />
       </button>
       <div className={showLogout ? "dropdown show-dropdown" : "dropdown"}>
