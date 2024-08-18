@@ -33,7 +33,7 @@ const withValidationErrorrs = (validateValues) => {
 export const validateJobInput = withValidationErrorrs([
   body("company").notEmpty().withMessage("Company is required"),
   body("position").notEmpty().withMessage("Position is required"),
-  body("jobLocation").notEmpty().withMessage("JobLocation is required"),
+  body("JobLocation").notEmpty().withMessage("JobLocation is required"),
   body("jobStatus")
     .isIn(Object.values(JOB_STATUS))
     .withMessage("Invalid status value"),

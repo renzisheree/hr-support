@@ -1,7 +1,7 @@
-import { Form, useNavigation } from "react-router-dom";
+import { Form } from "react-router-dom";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { useDashboardContext } from "./DashboardLayout";
-import { FormRow } from "../components";
+import { FormRow, SubmitBtn } from "../components";
 import { toast } from "react-toastify";
 import customFetch from "../../utils/customeFetch";
 export const action = async ({ request }) => {
@@ -22,8 +22,7 @@ export const action = async ({ request }) => {
 };
 const Profile = () => {
   const { data } = useDashboardContext();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === "submitting";
+
   const { name, lastName, email, location } = data;
   return (
     <Wrapper>
@@ -46,14 +45,7 @@ const Profile = () => {
           <FormRow type="text" name="lastName" defaultValue={lastName} />
           <FormRow type="email" name="email" defaultValue={email} />
           <FormRow type="text" name="location" defaultValue={location} />
-          <button
-            className="btn btn-block form-btn"
-            type="submit"
-            disabled={isSubmitting}
-          >
-            {" "}
-            {isSubmitting ? "Vui lòng chờ..." : "Xác nhận"}
-          </button>
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>

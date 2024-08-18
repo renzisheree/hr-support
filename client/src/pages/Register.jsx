@@ -1,6 +1,6 @@
 import Wrapper from "../assets/wrappers/RegisterAndLoginPage.js";
-import { FormRow, Logo } from "../components";
-import { Form, redirect, useNavigation, Link } from "react-router-dom";
+import { FormRow, Logo, SubmitBtn } from "../components";
+import { Form, redirect, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import customFetch from "../../utils/customeFetch.js";
 
@@ -19,8 +19,6 @@ export const action = async ({ request }) => {
   }
 };
 const Register = () => {
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === "submitting";
   return (
     <Wrapper>
       <Form method="post" action="" className="form">
@@ -31,9 +29,7 @@ const Register = () => {
         <FormRow type="text" name="location" labelText="location" />
         <FormRow type="email" name="email" />
         <FormRow type="password" name="password" labelText="Mật khẩu" />
-        <button className="btn btn-block" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Đang gửi..." : "Đăng ký"}
-        </button>
+        <SubmitBtn />
         <p>
           Đã có tài khoản?
           <Link to="/login" className="member-btn">
