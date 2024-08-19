@@ -1,13 +1,13 @@
 export const JOB_STATUS = {
-  PENDING: "Chờ",
-  INTERVIEW: "Phỏng vấn",
-  DECLINED: "Từ chối",
+  PENDING: "pending",
+  INTERVIEW: "interview",
+  DECLINED: "declined",
 };
 
 export const JOB_TYPE = {
-  FULL_TIME: "Toàn thời gian",
-  PART_TIME: "Bán thời gian",
-  INTERNSHIP: "Thực tập",
+  FULL_TIME: "full-time",
+  PART_TIME: "part-time",
+  INTERNSHIP: "internship",
 };
 
 export const JOB_SORT_BY = {

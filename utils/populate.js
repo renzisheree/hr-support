@@ -7,7 +7,7 @@ dotenv.config();
 
 try {
   await mongoose.connect(process.env.MONGO_URL);
-  const user = await userModel.findOne({ email: "mapneverdie1@gmail.com" });
+  const user = await userModel.findOne({ email: "test@test.com" });
   const jsonJobs = JSON.parse(
     await readFile(new URL("./mock_data.json", import.meta.url))
   );

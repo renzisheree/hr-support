@@ -31,9 +31,9 @@ const Job = ({
           <JobInfo icon={<FaBriefcase />} text={jobType} />
           <div
             className={`status ${
-              jobStatus === "Phỏng vấn"
+              jobStatus === "interview"
                 ? "interview"
-                : jobStatus === "Từ chối"
+                : jobStatus === "declined"
                 ? "declined"
                 : "pending"
             }`}
