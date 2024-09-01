@@ -10,3 +10,10 @@ export { default as JobContainer } from "./JobContainer.jsx";
 export { default as SearchContainer } from "./SearchContainer.jsx";
 export { default as StatItem } from "./StatItem.jsx";
 export { default as SubmitBtn } from "./SubmitBtn.jsx";
+export { default as ChartsContainer } from "./ChartsContainer.jsx";
+
+export { default as StatsContainer } from "./StatsContainer.jsx";
+
+export { default as BarChart } from "./BarChart.jsx";
+
+export { default as AreaChart } from "./AreaChart.jsx";

@@ -26,6 +26,7 @@ import { loader as loaderDashboard } from "./pages/DashboardLayout";
 import { loader as loaderAllJobs } from "./pages/AllJobs";
 import { loader as loaderEditJob } from "./pages/EditJob";
 import { loader as loaderAdmin } from "./pages/Admin";
+import { loader as statsLoader } from "./pages/Stats";
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("dark-theme") === "true";
   document.body.classList.toggle("dark-theme", isDarkTheme);
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
           },
           {
             path: "stats",
+            loader: statsLoader,
             element: <Stats />,
           },
           {

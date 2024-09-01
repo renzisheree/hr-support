@@ -14,7 +14,34 @@ export const getJob = async (req, res) => {
 };
 
 export const getJobs = async (req, res) => {
-  const jobs = await JobModel.find({ createdBy: req.user.userId });
+  const { search, jobStatus, jobType, sort } = req.query;
+  const queryObject = {
+    createdBy: req.user.userId,
+  };
+  if (search) {
+    queryObject.$or = [
+      {
+        position: { $regex: search, $options: "i" },
+      },
+      {
+        company: { $regex: search, $options: "i" },
+      },
+    ];
+  }
+  if (jobStatus && jobStatus !== "all") {
+    queryObject.jobStatus = jobStatus;
+  }
+  if (jobType && jobType !== "all") {
+    queryObject.jobType = jobType;
+  }
+  const sortOptions = {
+    newest: "-createdAt",
+    oldest: "createdAt",
+    "a-z": "position",
+    "z-a": "-position",
+  };
+  const sortKey = sortOptions[sort] || sortOptions.newest;
+  const jobs = await JobModel.find(queryObject).sort(sortKey);
   res.status(StatusCodes.OK).json({
     success: true,
     data: jobs,
@@ -61,7 +88,7 @@ export const showStats = async (req, res) => {
     acc[title] = count;
     return acc;
   }, {});
-  const defaultStatus = {
+  const defaultStats = {
     pending: stats.pending || 0,
     interview: stats.interview || 0,
     declined: stats.declined || 0,
@@ -90,5 +117,5 @@ export const showStats = async (req, res) => {
       return { date, count };
     })
     .reverse();
-  res.status(StatusCodes.OK).json({ defaultStatus, monthlyApplication });
+  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplication });
 };
