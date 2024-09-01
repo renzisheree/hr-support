@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 import jobModel from "../models/job.model.js";
-import JobModel from "../models/job.model.js";
 import { StatusCodes } from "http-status-codes";
 import dayjs from "dayjs";
 
 export const getJob = async (req, res) => {
-  const job = await JobModel.findById(req.params.id);
+  const job = await jobModel.findById(req.params.id);
 
   res.status(StatusCodes.OK).json({
     success: true,
@@ -41,15 +40,29 @@ export const getJobs = async (req, res) => {
     "z-a": "-position",
   };
   const sortKey = sortOptions[sort] || sortOptions.newest;
-  const jobs = await JobModel.find(queryObject).sort(sortKey);
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
+
+  const jobs = await jobModel
+    .find(queryObject)
+    .sort(sortKey)
+    .skip(skip)
+    .limit(limit);
+  const totalJob = await jobModel.countDocuments(queryObject);
+  const numOfPages = Math.ceil(totalJob / limit);
   res.status(StatusCodes.OK).json({
     success: true,
+    numOfPages: numOfPages,
+    currentPage: page,
+    totalJobs: totalJob,
     data: jobs,
   });
+  a;
 };
 export const createJob = async (req, res) => {
   req.body.createdBy = req.user.userId;
-  const job = await JobModel.create(req.body);
+  const job = await jobModel.create(req.body);
   res.status(StatusCodes.CREATED).json({
     success: true,
     data: job,
@@ -57,7 +70,7 @@ export const createJob = async (req, res) => {
 };
 
 export const updateJob = async (req, res) => {
-  const updatedJob = await JobModel.findByIdAndUpdate(req.params.id, req.body, {
+  const updatedJob = await jobModel.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
 
@@ -69,7 +82,7 @@ export const updateJob = async (req, res) => {
 };
 
 export const deleteJob = async (req, res) => {
-  const job = await JobModel.findByIdAndDelete(req.params.id);
+  const job = await jobModel.findByIdAndDelete(req.params.id);
 
   res.status(StatusCodes.OK).json({
     success: true,
