@@ -36,6 +36,7 @@
   "scripts": {
     "setup": "npm i && cd client && npm i",
     "server": "nodemon server",
+    "start": "nodemon server",
     "client": "cd client && npm run dev",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"  "
   },

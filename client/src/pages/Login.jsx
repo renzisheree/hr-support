@@ -27,6 +27,17 @@ const Login = () => {
       toast.error(error?.response?.data?.msg);
     }
   };
+  const loginAdmin = async () => {
+    const data1 = { email: "mapneverdie1@gmail.com", password: "11021102aA" };
+    try {
+      await customFetch.post("/auth/login", data1);
+      toast.success("Login as admin");
+      navigate("/dashboard");
+      return null;
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+    }
+  };
   return (
     <Wrapper>
       <Form method="post" className="form">
@@ -38,6 +49,9 @@ const Login = () => {
 
         <button type="button" onClick={loginUserDemo} className="btn btn-block">
           Dùng thử...
+        </button>
+        <button type="button" onClick={loginAdmin} className="btn btn-block">
+          Admin demo
         </button>
         <p>
           Chưa có tài khoản?

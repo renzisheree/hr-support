@@ -1,4 +1,3 @@
-# Frontend Dockerfile
 FROM node:18 as build
 
 # Set the working directory
