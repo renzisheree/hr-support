@@ -3,7 +3,7 @@ import customFetch from "../../utils/customeFetch";
 import { toast } from "react-toastify";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { FormRow, FormRowSelect, SubmitBtn } from "../components";
-import { JOB_STATUS, JOB_TYPE } from "../../../utils/constants";
+import { JOB_STATUS, JOB_TYPE } from "../utils/constants";
 
 export const loader = async ({ params }) => {
   try {
