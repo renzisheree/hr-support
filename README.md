@@ -1,1 +1,1 @@
-JOB SEEKER - find a job now!
+HR SUPPORT - Manage your human resource!
